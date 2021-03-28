@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+    <!--<environmentMode>REPRODUCIBLE</environmentMode>-->
+    <environmentMode>FULL_ASSERT</environmentMode>
+
+    <moveThreadCount>NONE</moveThreadCount>
+
+<!--
+    <scanAnnotatedClasses>
+        <packageInclude>eu.mappost.lvm.model</packageInclude>
+    </scanAnnotatedClasses>
+-->
+    <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+    <entityClass>demo.model.Customer</entityClass>
+
+<!--    <scoreDirectorFactory>-->
+<!--        <easyScoreCalculatorClass>demo.model.FPLScoreCalculator</easyScoreCalculatorClass>-->
+<!--        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>-->
+<!--    </scoreDirectorFactory>-->
+    <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+    </scoreDirectorFactory>
+
+    <termination><!-- Solver termination -->
+        <terminationCompositionStyle>OR</terminationCompositionStyle>
+        <hoursSpentLimit>1</hoursSpentLimit>
+<!--        <bestScoreLimit>0hard/-3732794soft</bestScoreLimit>-->
+        <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+    </termination>
+    
+    <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+
+    </constructionHeuristic>
+    
+
+    <localSearch>
+        <localSearchType>TABU_SEARCH</localSearchType>
+    </localSearch>
+
+    <randomSeed>0</randomSeed>
+</solver>
