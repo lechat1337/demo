@@ -3,18 +3,20 @@ package demo.model;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 
+import java.math.BigDecimal;
+
 @PlanningEntity
 public class Customer {
     private int id;
     private Location location;
-    private double demand;
+    private BigDecimal demand;
 
     @PlanningVariable(valueRangeProviderRefs = "facilityRange")
     private Facility facility;
 
     public Customer(){}
     
-    public Customer(int id, double demand, Location location){
+    public Customer(int id, BigDecimal demand, Location location){
         this.id = id;
         this.demand = demand;
         this.location = location;
@@ -22,11 +24,15 @@ public class Customer {
 
     public boolean isAssigned(){return facility != null;}
 
-    public long getDemand() {
-        return (long) Math.ceil(demand);
+    public BigDecimal getDemand() {
+        return demand;
     }
 
-    public void setDemand(double demand) {
+    public long getDemandLong() {
+        return demand.longValue();
+    }
+
+    public void setDemand(BigDecimal demand) {
         this.demand = demand;
     }
 
@@ -54,9 +60,16 @@ public class Customer {
         this.location = location;
     }
 
-    public long distToFacility() {
+    public BigDecimal distToFacility() {
         if (facility != null){
-            return (long) Math.ceil(location.distTo(facility.getLocation()));
+            return Matrix.getDist(this.id, facility.getId());
+        }
+        return BigDecimal.valueOf(0);
+    }
+
+    public long distToFacilityLong(){
+        if (facility != null){
+            return Matrix.getDist(this.id, facility.getId()).longValue();
         }
         return 0;
     }

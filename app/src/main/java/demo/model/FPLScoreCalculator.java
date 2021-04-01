@@ -1,45 +1,43 @@
 package demo.model;
 
+import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 
-import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
 
-import org.optaplanner.core.api.score.calculator.EasyScoreCalculator;
-
-
-public class FPLScoreCalculator implements EasyScoreCalculator<FacilityLocationProblem, HardSoftLongScore> {
-    @Override
-    public HardSoftLongScore calculateScore(FacilityLocationProblem solution){
-        long hard = 0;
-        long soft = 0;
+public class FPLScoreCalculator { //implements EasyScoreCalculator<FacilityLocationProblem, HardSoftLongScore> {
+//    @Override
+    public static BigDecimal calculateScore(FacilityLocationProblem solution){
+        BigDecimal hard = BigDecimal.ZERO;
+        BigDecimal soft = BigDecimal.ZERO;
         int id = -1;
-        LinkedHashMap<Integer, Double> assignedDemands = new LinkedHashMap<>();
+        LinkedHashMap<Integer, BigDecimal> assignedDemands = new LinkedHashMap<>();
 
         for(Customer c : solution.getCustomers()){
             if (c.getFacility() != null) {
                 id = c.getFacility().getId();
-                soft += c.distToFacility();
+                soft = soft.add(c.distToFacility());
                 if (assignedDemands.containsKey(id)) {
-                    assignedDemands.put(id, assignedDemands.get(id) + c.getDemand());
+                    assignedDemands.put(id, assignedDemands.get(id).add(c.getDemand()));
                 } else {
-                    assignedDemands.put(id, (double) c.getDemand());
+                    assignedDemands.put(id, c.getDemand());
                 }
             }else{
-                hard += 100;
+                hard = hard.add(BigDecimal.valueOf(100));
             }
         }
 
         for(Facility f : solution.getFacilities()) {
             if (assignedDemands.containsKey(f.getId())) {
-                soft += f.getCost();
-                hard += (f.getCapasity() - assignedDemands.get(f.getId()) < 0) ? (assignedDemands.get(f.getId()) - f.getCapasity()) : 0;
+                soft = soft.add(f.getCost());
+                hard = hard.add((f.getCapasity().subtract(assignedDemands.get(f.getId())).compareTo(BigDecimal.ZERO) == -1) ?
+                        (assignedDemands.get(f.getId()).subtract(f.getCapasity())) : BigDecimal.ZERO);
             }
         }
 
-        hard = -hard;
-        soft = -soft;
+//        hard = -hard;
+//        soft = -soft;
 
-        return HardSoftLongScore.of(hard, soft);
+        return soft;
 
 
     }

@@ -21,12 +21,12 @@ public class FLPConstraingProvider implements ConstraintProvider {
 
     Constraint penalizeCapasity(ConstraintFactory constraintFactory) {
         return constraintFactory.from(Customer.class)
-                .groupBy(Customer::getFacility, sumLong(Customer::getDemand))
-                .filter((facility, demand) -> demand > facility.getCapasity())
+                .groupBy(Customer::getFacility, sumLong(Customer::getDemandLong))
+                .filter((facility, demand) -> demand > facility.getCapasityLong())
                 .penalizeLong(
                        "Faciliy capasisty",
                         HardSoftLongScore.ONE_HARD,
-                        (facility, demand) -> (long) (demand - facility.getCapasity()));
+                        (facility, demand) -> (demand - facility.getCapasityLong()));
     }
 
     private Constraint penalizeSetupCost(ConstraintFactory factory) {
@@ -35,7 +35,7 @@ public class FLPConstraingProvider implements ConstraintProvider {
                 .penalizeLong(
                        "Setup Cost",
                         HardSoftLongScore.ONE_SOFT,
-                        Facility::getCost);
+                        Facility::getCostLong);
     }
 
     private Constraint penalizeDistancesToFacilities(ConstraintFactory factory) {
@@ -44,7 +44,7 @@ public class FLPConstraingProvider implements ConstraintProvider {
                 .penalizeLong(
                         "Distance",
                         HardSoftLongScore.ONE_SOFT,
-                        Customer::distToFacility);
+                        Customer::distToFacilityLong);
     }
 
 }

@@ -41,10 +41,12 @@ public class FacilityLocationProblem {
 
     public void addFacility(Facility facility){
         this.facilities.add(facility);
+        Matrix.addFacility(facility.getLocation());
     }
 
     public void addCustomer(Customer customer){
         this.customers.add(customer);
+        Matrix.addCustomer(customer.getLocation());
     }
 
     public List<Customer> getCustomers() {

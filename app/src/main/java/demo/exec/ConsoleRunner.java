@@ -4,14 +4,11 @@
 package demo.exec;
 
 import java.io.*;
+import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Scanner; // Import the Scanner class to read text files
 
-import demo.model.Customer;
-import demo.model.Facility;
-import demo.model.FacilityLocationProblem;
-import demo.model.Location;
-import demo.model.ProblemSolver;
+import demo.model.*;
 
 public class ConsoleRunner {
     public static FacilityLocationProblem getProblem(File file) {
@@ -27,8 +24,8 @@ public class ConsoleRunner {
             nClients = sc.nextInt();
             for(int i=0; i < nWarehouses; i++){
                 tmpFac = new Facility(i,
-                sc.nextDouble(),
-                sc.nextDouble(),
+                        BigDecimal.valueOf(sc.nextDouble()),
+                        BigDecimal.valueOf(sc.nextDouble()),
                 new Location(sc.nextDouble(), sc.nextDouble()));
                 //System.out.println(tmpFac.toStirng());
                 problem.addFacility(tmpFac);
@@ -36,7 +33,7 @@ public class ConsoleRunner {
 
             for(int i=0; i < nClients; i++){
                 problem.addCustomer(new Customer(i,
-                                                 sc.nextDouble(),
+                                                 BigDecimal.valueOf(sc.nextDouble()),
                                                  new Location(sc.nextDouble(), sc.nextDouble())));     
             }
             sc.close();
@@ -44,17 +41,18 @@ public class ConsoleRunner {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
+        Matrix.adjustMatrix();
+        Matrix.calculate();
         return problem;
     }
 
     public static void main(String[] args) throws IOException {
 
-        FacilityLocationProblem problem = ConsoleRunner.getProblem(new File("C:\\Users\\aleksejs\\coursera\\facility\\data\\fl_50_6"));
+        FacilityLocationProblem problem = ConsoleRunner.getProblem(new File("C:\\Users\\aleksejs\\coursera\\facility\\data\\fl_2000_2"));
 
         FacilityLocationProblem solution = ProblemSolver.solve(problem);
         StringBuilder res = new StringBuilder();
-        res.append(-solution.getScore().getSoftScore()).append(" 0\n");
+        res.append(FPLScoreCalculator.calculateScore(solution)).append(" 0\n");
         for (Customer c : solution.getCustomers()){
             res.append(c.getFacility().getId()).append(" ");
         }

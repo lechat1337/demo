@@ -23,9 +23,9 @@
 
     <termination><!-- Solver termination -->
         <terminationCompositionStyle>OR</terminationCompositionStyle>
-        <hoursSpentLimit>1</hoursSpentLimit>
+        <hoursSpentLimit>2</hoursSpentLimit>
 <!--        <bestScoreLimit>0hard/-3732794soft</bestScoreLimit>-->
-        <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+        <unimprovedMinutesSpentLimit>40</unimprovedMinutesSpentLimit>
     </termination>
     
     <constructionHeuristic>
@@ -35,7 +35,14 @@
     
 
     <localSearch>
-        <localSearchType>TABU_SEARCH</localSearchType>
+<!--        <localSearchType>LATE_ACCEPTANCE</localSearchType>-->
+        <acceptor>
+            <lateAcceptanceSize>400</lateAcceptanceSize>
+            <entityTabuSize>6</entityTabuSize>
+        </acceptor>
+        <forager>
+            <acceptedCountLimit>1</acceptedCountLimit>
+        </forager>
     </localSearch>
 
     <randomSeed>0</randomSeed>

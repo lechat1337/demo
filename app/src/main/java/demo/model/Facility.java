@@ -1,15 +1,17 @@
 package demo.model;
 
+import java.math.BigDecimal;
+
 public class Facility {
 
     private int id;
     private Location location;
-    private double capasity;
-    private double cost;
+    private BigDecimal capasity;
+    private BigDecimal cost;
 
     public Facility(){}
 
-    public Facility(int id, double cost, double cap,  Location loc){
+    public Facility(int id, BigDecimal cost, BigDecimal cap, Location loc){
         this.id = id;
         this.location = loc;
         this.capasity = cap;
@@ -21,13 +23,27 @@ public class Facility {
         return id;
     }
 
-    public double getCapasity() {
-        return capasity;
+    public void setCapasity(BigDecimal capasity) {
+        this.capasity = capasity;
     }
 
-    public long getCost() {
-        return (long) Math.ceil(cost);
+    public BigDecimal getCapasity() {
+        return capasity;
     }
+    public long getCapasityLong() {return capasity.longValue();}
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public long getCostLong() {
+        return cost.longValue();
+    }
+
 
     public Location getLocation() {
         return location;

@@ -1,5 +1,7 @@
 package demo.model;
 
+import java.math.BigDecimal;
+
 public class Location {
     private double x;
     private double y;
@@ -23,8 +25,8 @@ public class Location {
         return a.toString();
     }
 
-    public double distTo(Location location) {
-        return Math.sqrt(sqr(x - location.x) + sqr(y - location.y));
+    public BigDecimal distTo(Location location) {
+        return BigDecimal.valueOf(Math.sqrt(sqr(x - location.x) + sqr(y - location.y)));
     }
 
     private double sqr(double a){ return a*a;}
