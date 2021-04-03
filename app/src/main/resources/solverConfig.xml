@@ -23,26 +23,26 @@
 
     <termination><!-- Solver termination -->
         <terminationCompositionStyle>OR</terminationCompositionStyle>
-        <hoursSpentLimit>2</hoursSpentLimit>
+        <minutesSpentLimit>2</minutesSpentLimit>
 <!--        <bestScoreLimit>0hard/-3732794soft</bestScoreLimit>-->
-        <unimprovedMinutesSpentLimit>40</unimprovedMinutesSpentLimit>
+        <unimprovedSecondsSpentLimit>50</unimprovedSecondsSpentLimit>
     </termination>
     
     <constructionHeuristic>
-        <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
 
     </constructionHeuristic>
     
 
     <localSearch>
-<!--        <localSearchType>LATE_ACCEPTANCE</localSearchType>-->
-        <acceptor>
-            <lateAcceptanceSize>400</lateAcceptanceSize>
-            <entityTabuSize>6</entityTabuSize>
-        </acceptor>
-        <forager>
-            <acceptedCountLimit>1</acceptedCountLimit>
-        </forager>
+        <localSearchType>TABOO_SEARCH</localSearchType>
+<!--        <acceptor>-->
+<!--            <lateAcceptanceSize>400</lateAcceptanceSize>-->
+<!--            <entityTabuSize>6</entityTabuSize>-->
+<!--        </acceptor>-->
+<!--        <forager>-->
+<!--            <acceptedCountLimit>1</acceptedCountLimit>-->
+<!--        </forager>-->
     </localSearch>
 
     <randomSeed>0</randomSeed>

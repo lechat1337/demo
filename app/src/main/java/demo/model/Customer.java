@@ -5,7 +5,7 @@ import org.optaplanner.core.api.domain.variable.PlanningVariable;
 
 import java.math.BigDecimal;
 
-@PlanningEntity
+@PlanningEntity(difficultyComparatorClass = CustomerDifficultyComparator.class)
 public class Customer {
     private int id;
     private Location location;
