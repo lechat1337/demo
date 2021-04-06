@@ -3,9 +3,11 @@ package demo.model;
 import java.util.LinkedHashMap;
 
 import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
-import org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator;
+import org.optaplanner.core.api.score.buildin.simple.SimpleScore;
+import org.optaplanner.core.api.score.calculator.EasyScoreCalculator;
 
-public class FPLScoreCalculator implements EasyScoreCalculator<FacilityLocationProblem>{
+
+public class FPLScoreCalculator implements EasyScoreCalculator<FacilityLocationProblem, HardSoftLongScore> {
     @Override
     public HardSoftLongScore calculateScore(FacilityLocationProblem solution){
         long hard = 0;

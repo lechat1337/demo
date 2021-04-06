@@ -22,8 +22,8 @@
 
     <termination><!-- Solver termination -->
         <terminationCompositionStyle>OR</terminationCompositionStyle>
-        <hoursSpentLimit>1</hoursSpentLimit>
-        <unimprovedSecondsSpentLimit>30</unimprovedSecondsSpentLimit>
+        <minutesSpentLimit>2</minutesSpentLimit>
+        <unimprovedSecondsSpentLimit>50</unimprovedSecondsSpentLimit>
     </termination>
     
     <constructionHeuristic>
@@ -33,7 +33,7 @@
     
 
     <localSearch>
-        <localSearchType>TABU_SEARCH</localSearchType>
+        <localSearchType>TABOO_SEARCH</localSearchType>
     </localSearch>
 
     <randomSeed>0</randomSeed>
