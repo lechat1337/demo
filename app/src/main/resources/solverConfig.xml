@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
     <!--<environmentMode>REPRODUCIBLE</environmentMode>-->
-    <environmentMode>FULL_ASSERT</environmentMode>
-
-    <moveThreadCount>NONE</moveThreadCount>
+    <environmentMode>FAST_ASSERT</environmentMode>
 
 <!--
     <scanAnnotatedClasses>
@@ -19,13 +17,16 @@
 <!--    </scoreDirectorFactory>-->
     <scoreDirectorFactory>
         <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <assertionScoreDirectorFactory>
+            <easyScoreCalculatorClass>demo.model.FPLScoreCalculator</easyScoreCalculatorClass>
+        </assertionScoreDirectorFactory>
     </scoreDirectorFactory>
 
     <termination><!-- Solver termination -->
         <terminationCompositionStyle>OR</terminationCompositionStyle>
-        <minutesSpentLimit>2</minutesSpentLimit>
+        <minutesSpentLimit>1</minutesSpentLimit>
 <!--        <bestScoreLimit>0hard/-3732794soft</bestScoreLimit>-->
-        <unimprovedSecondsSpentLimit>50</unimprovedSecondsSpentLimit>
+        <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
     </termination>
     
     <constructionHeuristic>
@@ -35,7 +36,7 @@
     
 
     <localSearch>
-        <localSearchType>TABOO_SEARCH</localSearchType>
+        <localSearchType>HILL_CLIMBING</localSearchType>
 <!--        <acceptor>-->
 <!--            <lateAcceptanceSize>400</lateAcceptanceSize>-->
 <!--            <entityTabuSize>6</entityTabuSize>-->
@@ -45,5 +46,4 @@
 <!--        </forager>-->
     </localSearch>
 
-    <randomSeed>0</randomSeed>
 </solver>

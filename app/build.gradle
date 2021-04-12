@@ -23,6 +23,6 @@ dependencies {
 }
 
 mainClassName = 'demo.exec.ConsoleRunner'
-
+applicationDefaultJvmArgs = ['-Xmx2048m']
 distTar.enabled = false
 distZip.enabled = true

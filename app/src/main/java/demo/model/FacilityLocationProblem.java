@@ -9,6 +9,7 @@ import org.optaplanner.core.api.domain.solution.PlanningScore;
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.domain.solution.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore;
 import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
 
 @PlanningSolution
@@ -22,7 +23,7 @@ public class FacilityLocationProblem {
     private List<Customer> customers;
 
     @PlanningScore
-    private HardSoftLongScore score;
+    private HardSoftBigDecimalScore score;
 
     @ConstraintConfigurationProvider
     private FLPConstraintConfiguration constraintConfiguration = new FLPConstraintConfiguration();
@@ -65,11 +66,11 @@ public class FacilityLocationProblem {
         this.facilities = facilities;
     }
 
-    public HardSoftLongScore getScore() {
+    public HardSoftBigDecimalScore getScore() {
         return score;
     }
 
-    public void setScore(HardSoftLongScore score) {
+    public void setScore(HardSoftBigDecimalScore score) {
         this.score = score;
     }
 
