@@ -1,11 +1,13 @@
 package demo.model;
 
 
+import org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore;
 import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
 import org.optaplanner.core.api.score.stream.Constraint;
 import org.optaplanner.core.api.score.stream.ConstraintFactory;
 import org.optaplanner.core.api.score.stream.ConstraintProvider;
 
+import static org.optaplanner.core.api.score.stream.ConstraintCollectors.sumBigDecimal;
 import static org.optaplanner.core.api.score.stream.ConstraintCollectors.sumLong;
 
 public class FLPConstraingProvider implements ConstraintProvider {
@@ -21,30 +23,30 @@ public class FLPConstraingProvider implements ConstraintProvider {
 
     Constraint penalizeCapasity(ConstraintFactory constraintFactory) {
         return constraintFactory.from(Customer.class)
-                .groupBy(Customer::getFacility, sumLong(Customer::getDemandLong))
-                .filter((facility, demand) -> demand > facility.getCapasityLong())
-                .penalizeLong(
+                .groupBy(Customer::getFacility, sumBigDecimal(Customer::getDemand))
+                .filter((facility, demand) -> demand.compareTo(facility.getCapasity()) == 1)
+                .penalizeBigDecimal(
                        "Faciliy capasisty",
-                        HardSoftLongScore.ONE_HARD,
-                        (facility, demand) -> (demand - facility.getCapasityLong()));
+                        HardSoftBigDecimalScore.ONE_HARD,
+                        (facility, demand) -> (demand.subtract(facility.getCapasity())));
     }
 
     private Constraint penalizeSetupCost(ConstraintFactory factory) {
         return factory.from(Customer.class)
                 .groupBy(Customer::getFacility)
-                .penalizeLong(
+                .penalizeBigDecimal(
                        "Setup Cost",
-                        HardSoftLongScore.ONE_SOFT,
-                        Facility::getCostLong);
+                        HardSoftBigDecimalScore.ONE_SOFT,
+                        Facility::getCost);
     }
 
     private Constraint penalizeDistancesToFacilities(ConstraintFactory factory) {
         return factory.from(Customer.class)
                 .filter(Customer::isAssigned)
-                .penalizeLong(
+                .penalizeBigDecimal(
                         "Distance",
-                        HardSoftLongScore.ONE_SOFT,
-                        Customer::distToFacilityLong);
+                        HardSoftBigDecimalScore.ONE_SOFT,
+                        Customer::distToFacility);
     }
 
 }

@@ -2,7 +2,10 @@ package demo.model;
 
 import org.optaplanner.core.api.domain.constraintweight.ConstraintConfiguration;
 import org.optaplanner.core.api.domain.constraintweight.ConstraintWeight;
+import org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore;
 import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
+
+import java.math.BigDecimal;
 
 @ConstraintConfiguration
 public class FLPConstraintConfiguration {
@@ -12,10 +15,10 @@ public class FLPConstraintConfiguration {
     static final String DISTANCE_FROM_FACILITY = "distance from facility";
 
     @ConstraintWeight(FACILITY_CAPACITY)
-    HardSoftLongScore facilityCapacity = HardSoftLongScore.ofHard(1);
+    HardSoftBigDecimalScore facilityCapacity = HardSoftBigDecimalScore.ofHard(BigDecimal.ONE);
     @ConstraintWeight(FACILITY_SETUP_COST)
-    HardSoftLongScore facilitySetupCost = HardSoftLongScore.ofSoft(1);
+    HardSoftBigDecimalScore facilitySetupCost = HardSoftBigDecimalScore.ofSoft(BigDecimal.ONE);
     @ConstraintWeight(DISTANCE_FROM_FACILITY)
-    HardSoftLongScore distanceFromFacility = HardSoftLongScore.ofSoft(1);
+    HardSoftBigDecimalScore distanceFromFacility = HardSoftBigDecimalScore.ofSoft(BigDecimal.ONE);
 }
 

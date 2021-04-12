@@ -1,12 +1,15 @@
 package demo.model;
 
+import org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore;
+import org.optaplanner.core.api.score.calculator.EasyScoreCalculator;
+
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 
 
-public class FPLScoreCalculator { //implements EasyScoreCalculator<FacilityLocationProblem, HardSoftLongScore> {
-//    @Override
-    public static BigDecimal calculateScore(FacilityLocationProblem solution){
+public class FPLScoreCalculator implements EasyScoreCalculator<FacilityLocationProblem, HardSoftBigDecimalScore> {
+    @Override
+    public HardSoftBigDecimalScore calculateScore(FacilityLocationProblem solution){
         BigDecimal hard = BigDecimal.ZERO;
         BigDecimal soft = BigDecimal.ZERO;
         int id = -1;
@@ -34,10 +37,10 @@ public class FPLScoreCalculator { //implements EasyScoreCalculator<FacilityLocat
             }
         }
 
-//        hard = -hard;
-//        soft = -soft;
+        hard = hard.negate();
+        soft = soft.negate();
 
-        return soft;
+        return HardSoftBigDecimalScore.of(hard, soft);
 
 
     }
