@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plannerBenchmark xmlns="https://www.optaplanner.org/xsd/benchmark" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://www.optaplanner.org/xsd/benchmark https://www.optaplanner.org/xsd/benchmark/benchmark.xsd">
+    <benchmarkDirectory>local/benchmarkReport</benchmarkDirectory>
+
+    <inheritedSolverBenchmark>
+        <solver>
+            <environmentMode>FAST_ASSERT</environmentMode>
+            <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+            <entityClass>demo.model.Customer</entityClass>
+            <scoreDirectorFactory>
+                <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+                <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+                <assertionScoreDirectorFactory>
+                    <easyScoreCalculatorClass>demo.model.FPLScoreCalculator</easyScoreCalculatorClass>
+                </assertionScoreDirectorFactory>
+            </scoreDirectorFactory>
+            <termination>
+                <terminationCompositionStyle>OR</terminationCompositionStyle>
+                <minutesSpentLimit>1</minutesSpentLimit>
+                <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+            </termination>
+            <constructionHeuristic>
+                <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+
+            </constructionHeuristic>
+
+        </solver>
+        <problemBenchmarks>
+            <solutionFileIOClass>demo.exec.FacilityLocationProblemFileIO</solutionFileIOClass>
+            <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_1</inputSolutionFile>
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_25_2</inputSolutionFile>
+        </problemBenchmarks>
+
+    </inheritedSolverBenchmark>
+
+    <solverBenchmark>
+        <name>taboo</name>
+        <solver>
+            <localSearch>
+                <localSearchType>TABU_SEARCH</localSearchType>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
+
+    <solverBenchmark>
+        <name>hill climbing</name>
+        <solver>
+            <localSearch>
+                <localSearchType>HILL_CLIMBING</localSearchType>
+            </localSearch>
+        </solver>
+    </solverBenchmark>
+
+</plannerBenchmark>
