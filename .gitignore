@@ -5,4 +5,4 @@
 build
 
 #ignore reports
-./app/local
+app/local
