@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><plannerBenchmarkResult>
+  <name>2021-04-08_155053</name>
+  <aggregation>false</aggregation>
+  <availableProcessors>4</availableProcessors>
+  <loggingLevelOptaPlannerCore>info</loggingLevelOptaPlannerCore>
+  <loggingLevelDroolsCore>warn</loggingLevelDroolsCore>
+  <maxMemory>2147483648</maxMemory>
+  <optaPlannerVersion>8.4.1.Final</optaPlannerVersion>
+  <javaVersion>Java 11.0.10 (AdoptOpenJDK)</javaVersion>
+  <javaVM>Java OpenJDK 64-Bit Server VM 11.0.10+9 (AdoptOpenJDK)</javaVM>
+  <operatingSystem>Windows 10 amd64 10.0</operatingSystem>
+  <parallelBenchmarkCount>1</parallelBenchmarkCount>
+  <warmUpTimeMillisSpentLimit>30</warmUpTimeMillisSpentLimit>
+  <solverBenchmarkResult>
+    <name>taboo</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>1</minutesSpentLimit>
+        <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+      </termination>
+      <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+      </constructionHeuristic>
+      <localSearch>
+        <localSearchType>TABU_SEARCH</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="1">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>12008904</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-2208soft</score>
+        <timeMillisSpent>10951</timeMillisSpent>
+        <scoreCalculationCount>959910</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="2">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>16527416</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-912soft</score>
+        <timeMillisSpent>10016</timeMillisSpent>
+        <scoreCalculationCount>1086919</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <solverBenchmarkResult>
+    <name>hill climbing</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>1</minutesSpentLimit>
+        <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+      </termination>
+      <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+      </constructionHeuristic>
+      <localSearch>
+        <localSearchType>HILL_CLIMBING</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="3">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>15156888</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-2208soft</score>
+        <timeMillisSpent>10182</timeMillisSpent>
+        <scoreCalculationCount>1061128</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="4">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>18014960</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-912soft</score>
+        <timeMillisSpent>10010</timeMillisSpent>
+        <scoreCalculationCount>1107634</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_100_7</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>1</singleBenchmarkResult>
+    <singleBenchmarkResult>3</singleBenchmarkResult>
+    <entityCount>100</entityCount>
+    <variableCount>100</variableCount>
+    <maximumValueCount>100</maximumValueCount>
+    <problemScale>10000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>97</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_25_2</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>2</singleBenchmarkResult>
+    <singleBenchmarkResult>4</singleBenchmarkResult>
+    <entityCount>50</entityCount>
+    <variableCount>50</variableCount>
+    <maximumValueCount>25</maximumValueCount>
+    <problemScale>1250</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>99</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <startingTimestamp>2021-04-08T15:50:53.2886796+03:00</startingTimestamp>
+  <benchmarkTimeMillisSpent>42885</benchmarkTimeMillisSpent>
+</plannerBenchmarkResult>

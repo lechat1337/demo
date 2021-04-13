@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?><plannerBenchmarkResult>
+  <name>2021-04-06_224927</name>
+  <aggregation>false</aggregation>
+  <availableProcessors>4</availableProcessors>
+  <loggingLevelOptaPlannerCore>warn</loggingLevelOptaPlannerCore>
+  <loggingLevelDroolsCore>warn</loggingLevelDroolsCore>
+  <maxMemory>1862270976</maxMemory>
+  <optaPlannerVersion>8.4.1.Final</optaPlannerVersion>
+  <javaVersion>Java 11.0.10 (AdoptOpenJDK)</javaVersion>
+  <javaVM>Java OpenJDK 64-Bit Server VM 11.0.10+9 (AdoptOpenJDK)</javaVM>
+  <operatingSystem>Windows 10 amd64 10.0</operatingSystem>
+  <parallelBenchmarkCount>1</parallelBenchmarkCount>
+  <warmUpTimeMillisSpentLimit>30</warmUpTimeMillisSpentLimit>
+  <solverBenchmarkResult>
+    <name>HILL_CLIMBING</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>1</minutesSpentLimit>
+      </termination>
+      <constructionHeuristic/>
+      <localSearch>
+        <localSearchType>HILL_CLIMBING</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="1">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>9301744</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-5609394soft</score>
+        <timeMillisSpent>60000</timeMillisSpent>
+        <scoreCalculationCount>5690224</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="2">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>11882992</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-2670536soft</score>
+        <timeMillisSpent>61691</timeMillisSpent>
+        <scoreCalculationCount>3754246</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <solverBenchmarkResult>
+    <name>TABU_SEARCH</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>1</minutesSpentLimit>
+      </termination>
+      <constructionHeuristic/>
+      <localSearch>
+        <localSearchType>TABU_SEARCH</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="3">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>9816624</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-3894234soft</score>
+        <timeMillisSpent>60000</timeMillisSpent>
+        <scoreCalculationCount>5531079</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="4">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>12956968</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-2670536soft</score>
+        <timeMillisSpent>61496</timeMillisSpent>
+        <scoreCalculationCount>3775762</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <solverBenchmarkResult>
+    <name>LATE_ACCEPTANCE</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>1</minutesSpentLimit>
+      </termination>
+      <constructionHeuristic/>
+      <localSearch>
+        <localSearchType>LATE_ACCEPTANCE</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="5">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>10354752</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-3610778soft</score>
+        <timeMillisSpent>60000</timeMillisSpent>
+        <scoreCalculationCount>5567197</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="6">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>14143416</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-2670536soft</score>
+        <timeMillisSpent>61486</timeMillisSpent>
+        <scoreCalculationCount>3738482</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <solverBenchmarkResult>
+    <name>GREAT_DELUGE</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>1</minutesSpentLimit>
+      </termination>
+      <constructionHeuristic/>
+      <localSearch>
+        <localSearchType>GREAT_DELUGE</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="7">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>10236824</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-4507603soft</score>
+        <timeMillisSpent>60000</timeMillisSpent>
+        <scoreCalculationCount>5702728</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="8">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>15432304</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-2670536soft</score>
+        <timeMillisSpent>60120</timeMillisSpent>
+        <scoreCalculationCount>3608926</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <solverBenchmarkResult>
+    <name>VARIABLE_NEIGHBORHOOD_DESCENT</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>1</minutesSpentLimit>
+      </termination>
+      <constructionHeuristic/>
+      <localSearch>
+        <localSearchType>VARIABLE_NEIGHBORHOOD_DESCENT</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="9">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>10911944</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-5337101soft</score>
+        <timeMillisSpent>60000</timeMillisSpent>
+        <scoreCalculationCount>7368557</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="10">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>16835768</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-2670536soft</score>
+        <timeMillisSpent>60554</timeMillisSpent>
+        <scoreCalculationCount>4967751</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_16_1</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>false</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>1</singleBenchmarkResult>
+    <singleBenchmarkResult>3</singleBenchmarkResult>
+    <singleBenchmarkResult>5</singleBenchmarkResult>
+    <singleBenchmarkResult>7</singleBenchmarkResult>
+    <singleBenchmarkResult>9</singleBenchmarkResult>
+    <entityCount>50</entityCount>
+    <variableCount>50</variableCount>
+    <maximumValueCount>16</maximumValueCount>
+    <problemScale>800</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>37</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_25_1</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>false</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>2</singleBenchmarkResult>
+    <singleBenchmarkResult>4</singleBenchmarkResult>
+    <singleBenchmarkResult>6</singleBenchmarkResult>
+    <singleBenchmarkResult>8</singleBenchmarkResult>
+    <singleBenchmarkResult>10</singleBenchmarkResult>
+    <entityCount>50</entityCount>
+    <variableCount>50</variableCount>
+    <maximumValueCount>25</maximumValueCount>
+    <problemScale>1250</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>82</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <startingTimestamp>2021-04-06T22:49:27.0010073+03:00</startingTimestamp>
+  <benchmarkTimeMillisSpent>608137</benchmarkTimeMillisSpent>
+</plannerBenchmarkResult>

@@ -2,7 +2,7 @@ package demo.model;
 
 import java.math.BigDecimal;
 
-public class Location {
+public class Location{
     private double x;
     private double y;
 

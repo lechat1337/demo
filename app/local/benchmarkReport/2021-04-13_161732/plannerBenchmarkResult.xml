@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?><plannerBenchmarkResult>
+  <name>2021-04-13_161732</name>
+  <aggregation>false</aggregation>
+  <availableProcessors>4</availableProcessors>
+  <loggingLevelOptaPlannerCore>info</loggingLevelOptaPlannerCore>
+  <loggingLevelDroolsCore>warn</loggingLevelDroolsCore>
+  <maxMemory>4294967296</maxMemory>
+  <optaPlannerVersion>8.4.1.Final</optaPlannerVersion>
+  <javaVersion>Java 11.0.10 (AdoptOpenJDK)</javaVersion>
+  <javaVM>Java OpenJDK 64-Bit Server VM 11.0.10+9 (AdoptOpenJDK)</javaVM>
+  <operatingSystem>Windows 10 amd64 10.0</operatingSystem>
+  <parallelBenchmarkCount>1</parallelBenchmarkCount>
+  <warmUpTimeMillisSpentLimit>30</warmUpTimeMillisSpentLimit>
+  <solverBenchmarkResult>
+    <name>taboo</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <environmentMode>REPRODUCIBLE</environmentMode>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>3</minutesSpentLimit>
+      </termination>
+      <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+      </constructionHeuristic>
+      <localSearch>
+        <termination>
+          <terminationCompositionStyle>OR</terminationCompositionStyle>
+          <unimprovedSecondsSpentLimit>30</unimprovedSecondsSpentLimit>
+          <unimprovedScoreDifferenceThreshold>0hard/100soft</unimprovedScoreDifferenceThreshold>
+        </termination>
+      </localSearch>
+      <localSearch>
+        <localSearchType>TABU_SEARCH</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="1">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>10239072</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-3743424.3292893206942soft</score>
+        <timeMillisSpent>180003</timeMillisSpent>
+        <scoreCalculationCount>14326612</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="2">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>8991552</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0hard/-2256.8411190362464040soft</score>
+        <timeMillisSpent>193824</timeMillisSpent>
+        <scoreCalculationCount>8596893</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="3">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>55896120</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-31271005.134674167112100soft</score>
+        <timeMillisSpent>186125</timeMillisSpent>
+        <scoreCalculationCount>8415915</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="4">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>42717440</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-6365147.177613383898976soft</score>
+        <timeMillisSpent>180004</timeMillisSpent>
+        <scoreCalculationCount>13173026</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="5">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>469920272</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-70623295.681367384191090soft</score>
+        <timeMillisSpent>180013</timeMillisSpent>
+        <scoreCalculationCount>12352625</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="6">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>172768736</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-11902663.46051878923147soft</score>
+        <timeMillisSpent>180057</timeMillisSpent>
+        <scoreCalculationCount>11044045</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="7">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>359991968</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-12134819.738430247494360soft</score>
+        <timeMillisSpent>180055</timeMillisSpent>
+        <scoreCalculationCount>11393552</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <solverBenchmarkResult>
+    <name>hill climbing</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <environmentMode>REPRODUCIBLE</environmentMode>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+      </scoreDirectorFactory>
+      <termination>
+        <minutesSpentLimit>3</minutesSpentLimit>
+      </termination>
+      <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+      </constructionHeuristic>
+      <localSearch>
+        <termination>
+          <terminationCompositionStyle>OR</terminationCompositionStyle>
+          <unimprovedSecondsSpentLimit>30</unimprovedSecondsSpentLimit>
+          <unimprovedScoreDifferenceThreshold>0hard/100soft</unimprovedScoreDifferenceThreshold>
+        </termination>
+      </localSearch>
+      <localSearch>
+        <localSearchType>HILL_CLIMBING</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="8">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>10302608</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-3738726.3180251684602soft</score>
+        <timeMillisSpent>180000</timeMillisSpent>
+        <scoreCalculationCount>15641110</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="9">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>8281832</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0hard/-2256.8411190362464040soft</score>
+        <timeMillisSpent>186861</timeMillisSpent>
+        <scoreCalculationCount>7614456</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="10">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>55932160</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-30940899.032058662562100soft</score>
+        <timeMillisSpent>180009</timeMillisSpent>
+        <scoreCalculationCount>8217970</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="11">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>42729696</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-6365147.177613383898976soft</score>
+        <timeMillisSpent>180003</timeMillisSpent>
+        <scoreCalculationCount>13149483</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="12">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>469921408</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-71195205.177167468516460soft</score>
+        <timeMillisSpent>180084</timeMillisSpent>
+        <scoreCalculationCount>11759815</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="13">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>172770912</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-11902663.46051878923147soft</score>
+        <timeMillisSpent>180060</timeMillisSpent>
+        <scoreCalculationCount>11045712</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="14">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>359989488</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0.0hard/-12146609.244198092093130soft</score>
+        <timeMillisSpent>180190</timeMillisSpent>
+        <scoreCalculationCount>10735806</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_50_6</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>1</singleBenchmarkResult>
+    <singleBenchmarkResult>8</singleBenchmarkResult>
+    <entityCount>200</entityCount>
+    <variableCount>200</variableCount>
+    <maximumValueCount>50</maximumValueCount>
+    <problemScale>10000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>42</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_100_7</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>2</singleBenchmarkResult>
+    <singleBenchmarkResult>9</singleBenchmarkResult>
+    <entityCount>100</entityCount>
+    <variableCount>100</variableCount>
+    <maximumValueCount>100</maximumValueCount>
+    <problemScale>10000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>89</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_100_1</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>3</singleBenchmarkResult>
+    <singleBenchmarkResult>10</singleBenchmarkResult>
+    <entityCount>1000</entityCount>
+    <variableCount>1000</variableCount>
+    <maximumValueCount>100</maximumValueCount>
+    <problemScale>100000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>943</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_200_7</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>4</singleBenchmarkResult>
+    <singleBenchmarkResult>11</singleBenchmarkResult>
+    <entityCount>800</entityCount>
+    <variableCount>800</variableCount>
+    <maximumValueCount>200</maximumValueCount>
+    <problemScale>160000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>392</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_500_7</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>5</singleBenchmarkResult>
+    <singleBenchmarkResult>12</singleBenchmarkResult>
+    <entityCount>3000</entityCount>
+    <variableCount>3000</variableCount>
+    <maximumValueCount>500</maximumValueCount>
+    <problemScale>1500000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>4844</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_1000_2</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>6</singleBenchmarkResult>
+    <singleBenchmarkResult>13</singleBenchmarkResult>
+    <entityCount>1500</entityCount>
+    <variableCount>1500</variableCount>
+    <maximumValueCount>1000</maximumValueCount>
+    <problemScale>1500000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>2974</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_2000_2</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>7</singleBenchmarkResult>
+    <singleBenchmarkResult>14</singleBenchmarkResult>
+    <entityCount>2000</entityCount>
+    <variableCount>2000</variableCount>
+    <maximumValueCount>2000</maximumValueCount>
+    <problemScale>4000000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>4391</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <startingTimestamp>2021-04-13T16:17:32.3742146+03:00</startingTimestamp>
+  <benchmarkTimeMillisSpent>2585970</benchmarkTimeMillisSpent>
+</plannerBenchmarkResult>

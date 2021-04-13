@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>2021-04-12_123246 Planner benchmark report</title>
+    <link href="twitterbootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="twitterbootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
+    <link href="twitterbootstrap/css/prettify.css" rel="stylesheet"/>
+    <link href="website/css/benchmarkReport.css" rel="stylesheet"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body onload="prettyPrint()">
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="benchmark-report-nav">
+                <div style="margin-top: 10px;">
+                    <a href="https://www.optaplanner.org">
+                        <img src="website/img/optaPlannerLogo.png" alt="OptaPlanner"/>
+                    </a>
+                </div>
+                <div style="margin-top: 10px; margin-bottom: 10px;">
+                    <ul class="nav nav-list">
+                        <li><a href="#summary">Summary</a></li>
+                        <li>
+                            <ul class="nav nav-list">
+                                <li><a href="#summary_result">Result</a></li>
+                                <li><a href="#summary_performance">Performance</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#problemBenchmarkResult">Problem benchmarks</a></li>
+                        <li>
+                            <ul class="nav nav-list">
+                                <li><a href="#problemBenchmark_fl_25_2">fl_25_2&nbsp;</a></li>
+                                <li><a href="#problemBenchmark_fl_100_1">fl_100_1&nbsp;</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#solverBenchmarkResult">Solver benchmarks</a></li>
+                        <li>
+                            <ul class="nav nav-list">
+                                <li><a href="#solverBenchmark_taboo">taboo&nbsp;        <span class="badge">1</span>
+
+</a></li>
+                                <li><a href="#solverBenchmark_hill-002D0020climbing">hill climbing&nbsp;        <span class="badge badge-success">0</span>
+
+</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#benchmarkInformation">Benchmark information</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="span10">
+            <header class="main-page-header">
+                <h1>Benchmark report</h1>
+            </header>
+            <section id="summary">
+                <div class="page-header">
+                    <h1>Summary</h1>
+                </div>
+                <div class="alert alert-error">
+                    <p>The environmentMode (FULL_ASSERT) is asserting. This decreases performance. Maybe set the environmentMode to REPRODUCIBLE.</p>
+                </div>
+
+                <section id="summary_result">
+                    <h2>Result summary</h2>
+                    <div class="tabbable">
+                        <ul class="nav nav-pills">
+                            <li class="active">
+                                <a href="#summary_bestScore" data-toggle="tab">Best score</a>
+                            </li>
+                            <li>
+                                <a href="#summary_bestScoreScalability" data-toggle="tab">Best score scalability</a>
+                            </li>
+                            <li>
+                                <a href="#summary_bestScoreDistribution" data-toggle="tab">Best score distribution</a>
+                            </li>
+                            <li>
+                                <a href="#summary_winningScoreDifference" data-toggle="tab">Winning score difference</a>
+                            </li>
+                            <li>
+                                <a href="#summary_worstScoreDifferencePercentage" data-toggle="tab">Worst score difference percentage (ROI)</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="summary_bestScore">
+                                <h3>Best score summary</h3>
+                                <p>Useful for visualizing the best solver configuration.</p>
+    <div class="tabbable tabs-right">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="#summary_bestScore_chart_0" data-toggle="tab">Hard score</a>
+            </li>
+            <li class="active">
+                <a href="#summary_bestScore_chart_1" data-toggle="tab">Soft score</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="summary_bestScore_chart_0">
+                <div class="benchmark-chart">
+                    <img src="summary/bestScoreSummaryLevel0.png"/>
+                </div>
+            </div>
+            <div class="tab-pane active" id="summary_bestScore_chart_1">
+                <div class="benchmark-chart">
+                    <img src="summary/bestScoreSummaryLevel1.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+                                <table class="benchmark-table table table-striped table-bordered">
+                                    <tr>
+                                        <th rowspan="2">Solver</th>
+                                        <th rowspan="2">Total</th>
+                                        <th rowspan="2">Average</th>
+                                        <th rowspan="2">Standard Deviation</th>
+                                        <th colspan="2">Problem</th>
+                                    </tr>
+                                    <tr>
+                                        <th>fl_25_2</th>
+                                        <th>fl_100_1</th>
+                                    </tr>
+                                    <tr>
+                                        <th>taboo&nbsp;        <span class="badge">1</span>
+
+</th>
+                                        <td>0.0hard/-363106687.353818736083soft</td>
+                                        <td>0.0hard/-181553343.676909368042soft</td>
+                                        <td>0.0E0/1.78E8</td>
+                                                        <td>0hard/-3269821.320530881624soft&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                                        <td>0.0hard/-359836866.033287854459soft&nbsp;        <span class="badge">1</span>
+
+</td>
+                                    </tr>
+                                    <tr class="favoriteSolverBenchmark">
+                                        <th>hill climbing&nbsp;        <span class="badge badge-success">0</span>
+
+</th>
+                                        <td>0hard/-345786039.267896698435soft</td>
+                                        <td>0hard/-172893019.633948349218soft</td>
+                                        <td>0.0E0/1.7E8</td>
+                                                        <td>0hard/-3269821.320530881624soft&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                                        <td>0hard/-342516217.947365816811soft&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="summary_bestScoreScalability">
+                                <h3>Best score scalability summary</h3>
+                                <p>Useful for visualizing the scalability of each solver configuration.</p>
+    <div class="tabbable tabs-right">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="#summary_bestScoreScalability_chart_0" data-toggle="tab">Hard score</a>
+            </li>
+            <li class="active">
+                <a href="#summary_bestScoreScalability_chart_1" data-toggle="tab">Soft score</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="summary_bestScoreScalability_chart_0">
+                <div class="benchmark-chart">
+                    <img src="summary/bestScoreScalabilitySummaryLevel0.png"/>
+                </div>
+            </div>
+            <div class="tab-pane active" id="summary_bestScoreScalability_chart_1">
+                <div class="benchmark-chart">
+                    <img src="summary/bestScoreScalabilitySummaryLevel1.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+                            </div>
+                            <div class="tab-pane" id="summary_bestScoreDistribution">
+                                <h3>Best score distribution summary</h3>
+                                <p>Useful for visualizing the reliability of each solver configuration.</p>
+                                <p>Maximum subSingle count: 1<br/></p>
+                                    <div class="alert alert-error">
+                                        <p>The benchmarker did not run multiple subSingles, so there is no distribution and therefore no reliability indication.</p>
+                                    </div>
+    <div class="tabbable tabs-right">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="#summary_bestScoreDistribution_chart_0" data-toggle="tab">Hard score</a>
+            </li>
+            <li class="active">
+                <a href="#summary_bestScoreDistribution_chart_1" data-toggle="tab">Soft score</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="summary_bestScoreDistribution_chart_0">
+                <div class="benchmark-chart">
+                    <img src="summary/bestScoreDistributionSummaryLevel0.png"/>
+                </div>
+            </div>
+            <div class="tab-pane active" id="summary_bestScoreDistribution_chart_1">
+                <div class="benchmark-chart">
+                    <img src="summary/bestScoreDistributionSummaryLevel1.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+                            </div>
+                            <div class="tab-pane" id="summary_winningScoreDifference">
+                                <h3>Winning score difference summary</h3>
+                                <p>Useful for zooming in on the results of the best score summary.</p>
+    <div class="tabbable tabs-right">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="#summary_winningScoreDifference_chart_0" data-toggle="tab">Hard score</a>
+            </li>
+            <li class="active">
+                <a href="#summary_winningScoreDifference_chart_1" data-toggle="tab">Soft score</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="summary_winningScoreDifference_chart_0">
+                <div class="benchmark-chart">
+                    <img src="summary/winningScoreDifferenceSummaryLevel0.png"/>
+                </div>
+            </div>
+            <div class="tab-pane active" id="summary_winningScoreDifference_chart_1">
+                <div class="benchmark-chart">
+                    <img src="summary/winningScoreDifferenceSummaryLevel1.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+                                <table class="benchmark-table table table-striped table-bordered">
+                                    <tr>
+                                        <th rowspan="2">Solver</th>
+                                        <th rowspan="2">Total</th>
+                                        <th rowspan="2">Average</th>
+                                        <th colspan="2">Problem</th>
+                                    </tr>
+                                    <tr>
+                                        <th>fl_25_2</th>
+                                        <th>fl_100_1</th>
+                                    </tr>
+                                    <tr>
+                                        <th>taboo&nbsp;        <span class="badge">1</span>
+
+</th>
+                                        <td>0.0hard/-17320648.085922037648soft</td>
+                                        <td>0.0hard/-8660324.042961018824soft</td>
+                                                    <td>0hard/0E-12soft&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                                    <td>0.0hard/-17320648.085922037648soft&nbsp;        <span class="badge">1</span>
+
+</td>
+                                    </tr>
+                                    <tr class="favoriteSolverBenchmark">
+                                        <th>hill climbing&nbsp;        <span class="badge badge-success">0</span>
+
+</th>
+                                        <td>0hard/0E-12soft</td>
+                                        <td>0hard/0E-12soft</td>
+                                                    <td>0hard/0E-12soft&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                                    <td>0hard/0E-12soft&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="summary_worstScoreDifferencePercentage">
+                                <h3>Worst score difference percentage summary (ROI)</h3>
+                                <p>Useful for visualizing the return on investment (ROI) to decision makers.</p>
+    <div class="tabbable tabs-right">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="#summary_worstScoreDifferencePercentage_chart_0" data-toggle="tab">Hard score</a>
+            </li>
+            <li class="active">
+                <a href="#summary_worstScoreDifferencePercentage_chart_1" data-toggle="tab">Soft score</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="summary_worstScoreDifferencePercentage_chart_0">
+                <div class="benchmark-chart">
+                    <img src="summary/worstScoreDifferencePercentageSummaryLevel0.png"/>
+                </div>
+            </div>
+            <div class="tab-pane active" id="summary_worstScoreDifferencePercentage_chart_1">
+                <div class="benchmark-chart">
+                    <img src="summary/worstScoreDifferencePercentageSummaryLevel1.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+                                <table class="benchmark-table table table-striped table-bordered">
+                                    <tr>
+                                        <th rowspan="2">Solver</th>
+                                        <th rowspan="2">Average</th>
+                                        <th colspan="2">Problem</th>
+                                    </tr>
+                                    <tr>
+                                        <th>fl_25_2</th>
+                                        <th>fl_100_1</th>
+                                    </tr>
+                                    <tr>
+                                        <th>taboo&nbsp;        <span class="badge">1</span>
+
+</th>
+                                            <td>0.00%/0.00%</td>
+                                                    <td>0.00%/0.00%&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                                    <td>0.00%/0.00%&nbsp;        <span class="badge">1</span>
+
+</td>
+                                    </tr>
+                                    <tr class="favoriteSolverBenchmark">
+                                        <th>hill climbing&nbsp;        <span class="badge badge-success">0</span>
+
+</th>
+                                            <td>0.00%/2.41%</td>
+                                                    <td>0.00%/0.00%&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                                    <td>0.00%/4.81%&nbsp;        <span class="badge badge-success">0</span>
+
+</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="summary_performance">
+                    <h2>Performance summary</h2>
+                    <div class="tabbable">
+                        <ul class="nav nav-pills">
+                            <li class="active">
+                                <a href="#summary_scoreCalculationSpeed" data-toggle="tab">Score calculation speed</a>
+                            </li>
+                            <li>
+                                <a href="#summary_worstScoreCalculationSpeedDifferencePercentage" data-toggle="tab">Worst score calculation speed difference percentage</a>
+                            </li>
+                            <li>
+                                <a href="#summary_timeSpent" data-toggle="tab">Time spent</a>
+                            </li>
+                            <li>
+                                <a href="#summary_timeSpentScalability" data-toggle="tab">Time spent scalability</a>
+                            </li>
+                            <li>
+                                <a href="#summary_bestScorePerTimeSpent" data-toggle="tab">Best score per time spent</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="summary_scoreCalculationSpeed">
+                                <h3>Score calculation speed summary</h3>
+                                <p>
+                                    Useful for comparing different score calculators and/or constraint implementations
+                                    (presuming that the solver configurations do not differ otherwise).
+                                    Also useful to measure the scalability cost of an extra constraint.
+                                </p>
+                                <div class="benchmark-chart">
+                                    <img src="summary/scoreCalculationSpeedSummary.png"/>
+                                </div>
+                                <table class="benchmark-table table table-striped table-bordered">
+                                    <tr>
+                                        <th rowspan="2">Solver</th>
+                                        <th rowspan="2">Average</th>
+                                        <th colspan="2">Problem</th>
+                                    </tr>
+                                    <tr>
+                                        <th>fl_25_2</th>
+                                        <th>fl_100_1</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="problemScale">Problem scale</th>
+                                        <td class="problemScale">50,625</td>
+                                        <td class="problemScale">1,250</td>
+                                        <td class="problemScale">100,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>taboo&nbsp;        <span class="badge">1</span>
+
+</th>
+                                        <td>30,961/s</td>
+                                                        <td>51,119/s</td>
+                                                        <td>10,803/s</td>
+                                    </tr>
+                                    <tr class="favoriteSolverBenchmark">
+                                        <th>hill climbing&nbsp;        <span class="badge badge-success">0</span>
+
+</th>
+                                        <td>33,888/s</td>
+                                                        <td>57,174/s</td>
+                                                        <td>10,602/s</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="summary_worstScoreCalculationSpeedDifferencePercentage">
+                                <h3>Worst score calculation speed difference percentage</h3>
+                                <p>
+                                    Useful for comparing different score calculators and/or constraint implementations
+                                    (presuming that the solver configurations do not differ otherwise).
+                                    Also useful to measure the scalability cost of an extra constraint.
+                                </p>
+                                <div class="benchmark-chart">
+                                    <img src="summary/worstScoreCalculationSpeedDifferencePercentageSummary.png"/>
+                                </div>
+                                <table class="benchmark-table table table-striped table-bordered">
+                                    <tr>
+                                        <th rowspan="2">Solver</th>
+                                        <th rowspan="2">Average</th>
+                                        <th colspan="2">Problem</th>
+                                    </tr>
+                                    <tr>
+                                        <th>fl_25_2</th>
+                                        <th>fl_100_1</th>
+                                    </tr>
+                                    <tr>
+                                        <th>taboo&nbsp;        <span class="badge">1</span>
+
+</th>
+                                            <td>0.95%</td>
+                                                    <td>0.00%</td>
+                                                    <td>1.90%</td>
+                                    </tr>
+                                    <tr class="favoriteSolverBenchmark">
+                                        <th>hill climbing&nbsp;        <span class="badge badge-success">0</span>
+
+</th>
+                                            <td>5.92%</td>
+                                                    <td>11.84%</td>
+                                                    <td>0.00%</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="summary_timeSpent">
+                                <h3>Time spent summary</h3>
+                                <p>Useful for visualizing the performance of construction heuristics (presuming that no other solver phases are configured).</p>
+                                <div class="benchmark-chart">
+                                    <img src="summary/timeSpentSummary.png"/>
+                                </div>
+                                <table class="benchmark-table table table-striped table-bordered">
+                                    <tr>
+                                        <th rowspan="2">Solver</th>
+                                        <th rowspan="2">Average</th>
+                                        <th colspan="2">Problem</th>
+                                    </tr>
+                                    <tr>
+                                        <th>fl_25_2</th>
+                                        <th>fl_100_1</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="problemScale">Problem scale</th>
+                                        <td class="problemScale">50,625</td>
+                                        <td class="problemScale">1,250</td>
+                                        <td class="problemScale">100,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>taboo&nbsp;        <span class="badge">1</span>
+
+</th>
+                                        <td>45,214</td>
+                                                        <td>30,427</td>
+                                                        <td>60,001</td>
+                                    </tr>
+                                    <tr class="favoriteSolverBenchmark">
+                                        <th>hill climbing&nbsp;        <span class="badge badge-success">0</span>
+
+</th>
+                                        <td>45,059</td>
+                                                        <td>30,116</td>
+                                                        <td>60,002</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="summary_timeSpentScalability">
+                                <h3>Time spent scalability summary</h3>
+                                <p>Useful for extrapolating the scalability of construction heuristics (presuming that no other solver phases are configured).</p>
+                                <div class="benchmark-chart">
+                                    <img src="summary/timeSpentScalabilitySummary.png"/>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="summary_bestScorePerTimeSpent">
+                                <h3>Best score per time spent summary</h3>
+                                <p>Useful for visualizing trade-off between the best score versus the time spent for construction heuristics (presuming that no other solver phases are configured).</p>
+    <div class="tabbable tabs-right">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href="#summary_bestScorePerTimeSpent_chart_0" data-toggle="tab">Hard score</a>
+            </li>
+            <li class="active">
+                <a href="#summary_bestScorePerTimeSpent_chart_1" data-toggle="tab">Soft score</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="summary_bestScorePerTimeSpent_chart_0">
+                <div class="benchmark-chart">
+                    <img src="summary/bestScorePerTimeSpentSummaryLevel0.png"/>
+                </div>
+            </div>
+            <div class="tab-pane active" id="summary_bestScorePerTimeSpent_chart_1">
+                <div class="benchmark-chart">
+                    <img src="summary/bestScorePerTimeSpentSummaryLevel1.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section id="problemBenchmarkResult">
+                <div class="page-header">
+                    <h1>Problem benchmarks</h1>
+                </div>
+                <section id="problemBenchmark_fl_25_2">
+                    <h2>fl_25_2</h2>
+                    <p>
+                        Entity count: 50<br/>
+                        Variable count: 50<br/>
+                        Maximum value count: 25<br/>
+                        Problem scale: 1,250
+                            <br/>Time spent to load the inputSolution:&nbsp;
+                                62 ms
+                            <br/>Memory usage after loading the inputSolution (before creating the Solver): 8,756,372 bytes on average.
+                    </p>
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#problemStatistic_fl_25_2_BEST_SCORE" data-toggle="tab">Best score</a>
+                                    </li>
+                            </ul>
+                            <div class="tab-content">
+                                    <div class="tab-pane active" id="problemStatistic_fl_25_2_BEST_SCORE">
+                                                <div class="tabbable tabs-right">
+                                                    <ul class="nav nav-tabs">
+                                                            <li>
+                                                                <a href="#problemStatistic_fl_25_2_BEST_SCORE_0" data-toggle="tab">Hard score</a>
+                                                            </li>
+                                                            <li class="active">
+                                                                <a href="#problemStatistic_fl_25_2_BEST_SCORE_1" data-toggle="tab">Soft score</a>
+                                                            </li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                            <div class="tab-pane" id="problemStatistic_fl_25_2_BEST_SCORE_0">
+                                                                <div class="benchmark-chart">
+                                                                    <img src="fl_25_2/fl_25_2BestScoreStatisticLevel0.png"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane active" id="problemStatistic_fl_25_2_BEST_SCORE_1">
+                                                                <div class="benchmark-chart">
+                                                                    <img src="fl_25_2/fl_25_2BestScoreStatisticLevel1.png"/>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            <span>CSV files per solver:</span>
+                                            <div class="btn-group download-btn-group">
+                                                <button class="btn" onclick="window.location.href='fl_25_2/taboo/sub0/BEST_SCORE.csv'"><i class="icon-download"></i></button>
+                                                <button class="btn" onclick="window.location.href='fl_25_2/hill climbing/sub0/BEST_SCORE.csv'"><i class="icon-download"></i></button>
+                                            </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <section id="singleBenchmark_fl_25_2_taboo">
+                            <h3>fl_25_2_taboo</h3>
+                                    <pre class="prettyprint">Explanation of score (0hard/-3269821.320530881624soft):
+    Constraint match totals:
+        -3232321.320530881624soft: constraint (Distance) has 50 matches:
+            -595672.5794118943soft: justifications ([customer id:33 location: x: 498348.622166, y:1042778.922491])
+            -163356.73751733665soft: justifications ([customer id:26 location: x: 250434.12112, y:187215.186265])
+            ...
+        -37500.0soft: constraint (Setup Cost) has 6 matches:
+            -7500.0soft: justifications ([7 x: 437312.884269, y:236298.791087])
+            -7500.0soft: justifications ([6 x: 434319.760208, y:348947.990899])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 56):
+        -595672.5794118943soft: justification (customer id:33 location: x: 498348.622166, y:1042778.922491) has 1 matches:
+            -595672.5794118943soft: constraint (Distance)
+        -163356.73751733665soft: justification (customer id:26 location: x: 250434.12112, y:187215.186265) has 1 matches:
+            -163356.73751733665soft: constraint (Distance)
+        -127144.11967381179soft: justification (customer id:10 location: x: 301852.601198, y:459101.879327) has 1 matches:
+            -127144.11967381179soft: constraint (Distance)
+        -90858.59856761062soft: justification (customer id:36 location: x: 333744.356821, y:398310.433016) has 1 matches:
+            -90858.59856761062soft: constraint (Distance)
+        -57208.11826843063soft: justification (customer id:48 location: x: 416009.61528, y:289392.477399) has 1 matches:
+            -57208.11826843063soft: constraint (Distance)
+        ...
+</pre>
+                        </section>
+                        <section id="singleBenchmark_fl_25_2_hill-002D0020climbing">
+                            <h3>fl_25_2_hill climbing</h3>
+                                    <pre class="prettyprint">Explanation of score (0hard/-3269821.320530881624soft):
+    Constraint match totals:
+        -3232321.320530881624soft: constraint (Distance) has 50 matches:
+            -595672.5794118943soft: justifications ([customer id:33 location: x: 498348.622166, y:1042778.922491])
+            -163356.73751733665soft: justifications ([customer id:26 location: x: 250434.12112, y:187215.186265])
+            ...
+        -37500.0soft: constraint (Setup Cost) has 6 matches:
+            -7500.0soft: justifications ([7 x: 437312.884269, y:236298.791087])
+            -7500.0soft: justifications ([6 x: 434319.760208, y:348947.990899])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 56):
+        -595672.5794118943soft: justification (customer id:33 location: x: 498348.622166, y:1042778.922491) has 1 matches:
+            -595672.5794118943soft: constraint (Distance)
+        -163356.73751733665soft: justification (customer id:26 location: x: 250434.12112, y:187215.186265) has 1 matches:
+            -163356.73751733665soft: constraint (Distance)
+        -127144.11967381179soft: justification (customer id:10 location: x: 301852.601198, y:459101.879327) has 1 matches:
+            -127144.11967381179soft: constraint (Distance)
+        -90858.59856761062soft: justification (customer id:36 location: x: 333744.356821, y:398310.433016) has 1 matches:
+            -90858.59856761062soft: constraint (Distance)
+        -57208.11826843063soft: justification (customer id:48 location: x: 416009.61528, y:289392.477399) has 1 matches:
+            -57208.11826843063soft: constraint (Distance)
+        ...
+</pre>
+                        </section>
+                </section>
+                <section id="problemBenchmark_fl_100_1">
+                    <h2>fl_100_1</h2>
+                    <p>
+                        Entity count: 1,000<br/>
+                        Variable count: 1,000<br/>
+                        Maximum value count: 100<br/>
+                        Problem scale: 100,000
+                            <br/>Time spent to load the inputSolution:&nbsp;
+                                295 ms
+                            <br/>Memory usage after loading the inputSolution (before creating the Solver): 28,097,288 bytes on average.
+                    </p>
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#problemStatistic_fl_100_1_BEST_SCORE" data-toggle="tab">Best score</a>
+                                    </li>
+                            </ul>
+                            <div class="tab-content">
+                                    <div class="tab-pane active" id="problemStatistic_fl_100_1_BEST_SCORE">
+                                                <div class="tabbable tabs-right">
+                                                    <ul class="nav nav-tabs">
+                                                            <li>
+                                                                <a href="#problemStatistic_fl_100_1_BEST_SCORE_0" data-toggle="tab">Hard score</a>
+                                                            </li>
+                                                            <li class="active">
+                                                                <a href="#problemStatistic_fl_100_1_BEST_SCORE_1" data-toggle="tab">Soft score</a>
+                                                            </li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                            <div class="tab-pane" id="problemStatistic_fl_100_1_BEST_SCORE_0">
+                                                                <div class="benchmark-chart">
+                                                                    <img src="fl_100_1/fl_100_1BestScoreStatisticLevel0.png"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane active" id="problemStatistic_fl_100_1_BEST_SCORE_1">
+                                                                <div class="benchmark-chart">
+                                                                    <img src="fl_100_1/fl_100_1BestScoreStatisticLevel1.png"/>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            <span>CSV files per solver:</span>
+                                            <div class="btn-group download-btn-group">
+                                                <button class="btn" onclick="window.location.href='fl_100_1/taboo/sub0/BEST_SCORE.csv'"><i class="icon-download"></i></button>
+                                                <button class="btn" onclick="window.location.href='fl_100_1/hill climbing/sub0/BEST_SCORE.csv'"><i class="icon-download"></i></button>
+                                            </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <section id="singleBenchmark_fl_100_1_taboo">
+                            <h3>fl_100_1_taboo</h3>
+                                    <pre class="prettyprint">Explanation of score (0hard/-359836866.033287854459soft):
+    Constraint match totals:
+        -349991001.033287854459soft: constraint (Distance) has 1000 matches:
+            -637970.0544662366soft: justifications ([customer id:33 location: x: 121215.464506, y:83816.927639])
+            -637970.0544662366soft: justifications ([customer id:183 location: x: 50593.686746, y:131839.556766])
+            ...
+        -9845865.0soft: constraint (Setup Cost) has 7 matches:
+            -1513649.0soft: justifications ([87 x: 54609.389264, y:111397.953042])
+            -1444648.0soft: justifications ([59 x: 82182.717197, y:97396.194535])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 1007):
+        -1513649.0soft: justification (87 x: 54609.389264, y:111397.953042) has 1 matches:
+            -1513649.0soft: constraint (Setup Cost)
+        -1444648.0soft: justification (59 x: 82182.717197, y:97396.194535) has 1 matches:
+            -1444648.0soft: constraint (Setup Cost)
+        -1396759.0soft: justification (56 x: 56550.677569, y:110575.79133) has 1 matches:
+            -1396759.0soft: constraint (Setup Cost)
+        -1380954.0soft: justification (69 x: 62710.983606, y:69310.933935) has 1 matches:
+            -1380954.0soft: constraint (Setup Cost)
+        -1374042.0soft: justification (48 x: 88662.747555, y:45297.351524) has 1 matches:
+            -1374042.0soft: constraint (Setup Cost)
+        ...
+</pre>
+                        </section>
+                        <section id="singleBenchmark_fl_100_1_hill-002D0020climbing">
+                            <h3>fl_100_1_hill climbing</h3>
+                                    <pre class="prettyprint">Explanation of score (0hard/-342516217.947365816811soft):
+    Constraint match totals:
+        -332670352.947365816811soft: constraint (Distance) has 1000 matches:
+            -618974.894683615soft: justifications ([customer id:33 location: x: 121215.464506, y:83816.927639])
+            -618974.894683615soft: justifications ([customer id:83 location: x: 93574.435667, y:85782.324502])
+            ...
+        -9845865.0soft: constraint (Setup Cost) has 7 matches:
+            -1513649.0soft: justifications ([87 x: 54609.389264, y:111397.953042])
+            -1444648.0soft: justifications ([59 x: 82182.717197, y:97396.194535])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 1007):
+        -1513649.0soft: justification (87 x: 54609.389264, y:111397.953042) has 1 matches:
+            -1513649.0soft: constraint (Setup Cost)
+        -1444648.0soft: justification (59 x: 82182.717197, y:97396.194535) has 1 matches:
+            -1444648.0soft: constraint (Setup Cost)
+        -1396759.0soft: justification (56 x: 56550.677569, y:110575.79133) has 1 matches:
+            -1396759.0soft: constraint (Setup Cost)
+        -1380954.0soft: justification (69 x: 62710.983606, y:69310.933935) has 1 matches:
+            -1380954.0soft: constraint (Setup Cost)
+        -1374042.0soft: justification (48 x: 88662.747555, y:45297.351524) has 1 matches:
+            -1374042.0soft: constraint (Setup Cost)
+        ...
+</pre>
+                        </section>
+                </section>
+            </section>
+
+            <section id="solverBenchmarkResult">
+                <div class="page-header">
+                    <h1>Solver benchmarks</h1>
+                </div>
+                <section id="solverBenchmark_taboo">
+                    <h2>taboo&nbsp;        <span class="badge">1</span>
+
+</h2>
+                    <button class="btn showSolverConfiguration" data-toggle="collapse" data-target="#solverBenchmark_taboo_config">
+                        Show/hide Solver configuration
+                    </button>
+                    <div id="solverBenchmark_taboo_config" class="collapse in">
+                        <pre class="prettyprint lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;solver xmlns=&quot;https://www.optaplanner.org/xsd/solver&quot;&gt;
+  &lt;environmentMode&gt;FULL_ASSERT&lt;/environmentMode&gt;
+  &lt;solutionClass&gt;demo.model.FacilityLocationProblem&lt;/solutionClass&gt;
+  &lt;entityClass&gt;demo.model.Customer&lt;/entityClass&gt;
+  &lt;scoreDirectorFactory&gt;
+    &lt;constraintProviderClass&gt;demo.model.FLPConstraingProvider&lt;/constraintProviderClass&gt;
+    &lt;initializingScoreTrend&gt;ONLY_DOWN&lt;/initializingScoreTrend&gt;
+    &lt;assertionScoreDirectorFactory&gt;
+      &lt;easyScoreCalculatorClass&gt;demo.model.FPLScoreCalculator&lt;/easyScoreCalculatorClass&gt;
+    &lt;/assertionScoreDirectorFactory&gt;
+  &lt;/scoreDirectorFactory&gt;
+  &lt;termination&gt;
+    &lt;terminationCompositionStyle&gt;OR&lt;/terminationCompositionStyle&gt;
+    &lt;minutesSpentLimit&gt;1&lt;/minutesSpentLimit&gt;
+    &lt;unimprovedSecondsSpentLimit&gt;30&lt;/unimprovedSecondsSpentLimit&gt;
+  &lt;/termination&gt;
+  &lt;constructionHeuristic&gt;
+    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
+  &lt;/constructionHeuristic&gt;
+  &lt;localSearch&gt;
+    &lt;localSearchType&gt;TABU_SEARCH&lt;/localSearchType&gt;
+  &lt;/localSearch&gt;
+&lt;/solver&gt;
+</pre>
+                    </div>
+                </section>
+                <section id="solverBenchmark_hill-002D0020climbing">
+                    <h2>hill climbing&nbsp;        <span class="badge badge-success">0</span>
+
+</h2>
+                    <button class="btn showSolverConfiguration" data-toggle="collapse" data-target="#solverBenchmark_hill-002D0020climbing_config">
+                        Show/hide Solver configuration
+                    </button>
+                    <div id="solverBenchmark_hill-002D0020climbing_config" class="collapse in">
+                        <pre class="prettyprint lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;solver xmlns=&quot;https://www.optaplanner.org/xsd/solver&quot;&gt;
+  &lt;environmentMode&gt;FULL_ASSERT&lt;/environmentMode&gt;
+  &lt;solutionClass&gt;demo.model.FacilityLocationProblem&lt;/solutionClass&gt;
+  &lt;entityClass&gt;demo.model.Customer&lt;/entityClass&gt;
+  &lt;scoreDirectorFactory&gt;
+    &lt;constraintProviderClass&gt;demo.model.FLPConstraingProvider&lt;/constraintProviderClass&gt;
+    &lt;initializingScoreTrend&gt;ONLY_DOWN&lt;/initializingScoreTrend&gt;
+    &lt;assertionScoreDirectorFactory&gt;
+      &lt;easyScoreCalculatorClass&gt;demo.model.FPLScoreCalculator&lt;/easyScoreCalculatorClass&gt;
+    &lt;/assertionScoreDirectorFactory&gt;
+  &lt;/scoreDirectorFactory&gt;
+  &lt;termination&gt;
+    &lt;terminationCompositionStyle&gt;OR&lt;/terminationCompositionStyle&gt;
+    &lt;minutesSpentLimit&gt;1&lt;/minutesSpentLimit&gt;
+    &lt;unimprovedSecondsSpentLimit&gt;30&lt;/unimprovedSecondsSpentLimit&gt;
+  &lt;/termination&gt;
+  &lt;constructionHeuristic&gt;
+    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
+  &lt;/constructionHeuristic&gt;
+  &lt;localSearch&gt;
+    &lt;localSearchType&gt;HILL_CLIMBING&lt;/localSearchType&gt;
+  &lt;/localSearch&gt;
+&lt;/solver&gt;
+</pre>
+                    </div>
+                </section>
+            </section>
+
+            <section id="benchmarkInformation">
+                <div class="page-header">
+                    <h1>Benchmark information</h1>
+                </div>
+                <table class="benchmark-table table table-striped">
+                    <tr>
+                        <th>Name</th>
+                        <td>2021-04-12_123246</td>
+                    </tr>
+                    <tr>
+                        <th>Aggregation</th>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <th>Failure count</th>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th>Starting timestamp</th>
+                        <td>Apr 12, 2021, 12:32:46 PM</td>
+                    </tr>
+                    <tr>
+                        <th>Warm up time spent</th>
+                            <td>30 ms</td>
+                    </tr>
+                    <tr>
+                        <th>Parallel benchmark count / available processors</th>
+                            <td>1 / 4</td>
+                    </tr>
+                    <tr>
+                        <th>Benchmark time spent</th>
+                            <td>182,293 ms</td>
+                    </tr>
+                    <tr>
+                        <th>Environment mode</th>
+                        <td>FULL_ASSERT</td>
+                    </tr>
+                    <tr>
+                        <th>Logging level org.optaplanner.core</th>
+                        <td>debug</td>
+                    </tr>
+                    <tr>
+                        <th>Logging level org.drools.core</th>
+                        <td>warn</td>
+                    </tr>
+                    <tr>
+                        <th>Solver ranking class</th>
+                        <td>
+                            <span data-toggle="tooltip" title="org.optaplanner.benchmark.impl.ranking.TotalScoreSolverRankingComparator">
+                                TotalScoreSolverRankingComparator
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>VM max memory (as in -Xmx but lower)</th>
+                            <td>2,147,483,648 bytes</td>
+                    </tr>
+                    <tr>
+                        <th>OptaPlanner version</th>
+                        <td>8.4.1.Final</td>
+                    </tr>
+                    <tr>
+                        <th>Java version</th>
+                        <td>Java 11.0.10 (AdoptOpenJDK)</td>
+                    </tr>
+                    <tr>
+                        <th>Java VM</th>
+                        <td>Java OpenJDK 64-Bit Server VM 11.0.10+9 (AdoptOpenJDK)</td>
+                    </tr>
+                    <tr>
+                        <th>Operating system</th>
+                        <td>Windows 10 amd64 10.0</td>
+                    </tr>
+                    <tr>
+                        <th>Report locale</th>
+                        <td>en_US</td>
+                    </tr>
+                    <tr>
+                        <th>Report timezone</th>
+                        <td>Europe/Helsinki</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="twitterbootstrap/js/jquery.js"></script>
+<script src="twitterbootstrap/js/bootstrap.js"></script>
+<script src="twitterbootstrap/js/prettify.js"></script>
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+</body>
+</html>

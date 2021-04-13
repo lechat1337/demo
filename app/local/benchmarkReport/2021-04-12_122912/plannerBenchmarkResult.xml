@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><plannerBenchmarkResult>
+  <name>2021-04-12_122912</name>
+  <aggregation>false</aggregation>
+  <availableProcessors>4</availableProcessors>
+  <loggingLevelOptaPlannerCore>debug</loggingLevelOptaPlannerCore>
+  <loggingLevelDroolsCore>warn</loggingLevelDroolsCore>
+  <maxMemory>2147483648</maxMemory>
+  <optaPlannerVersion>8.4.1.Final</optaPlannerVersion>
+  <javaVersion>Java 11.0.10 (AdoptOpenJDK)</javaVersion>
+  <javaVM>Java OpenJDK 64-Bit Server VM 11.0.10+9 (AdoptOpenJDK)</javaVM>
+  <operatingSystem>Windows 10 amd64 10.0</operatingSystem>
+  <parallelBenchmarkCount>1</parallelBenchmarkCount>
+  <warmUpTimeMillisSpentLimit>30</warmUpTimeMillisSpentLimit>
+  <solverBenchmarkResult>
+    <name>taboo</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <environmentMode>FULL_ASSERT</environmentMode>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+        <assertionScoreDirectorFactory>
+          <easyScoreCalculatorClass>demo.model.FPLScoreCalculator</easyScoreCalculatorClass>
+        </assertionScoreDirectorFactory>
+      </scoreDirectorFactory>
+      <termination>
+        <terminationCompositionStyle>OR</terminationCompositionStyle>
+        <minutesSpentLimit>1</minutesSpentLimit>
+        <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+      </termination>
+      <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+      </constructionHeuristic>
+      <localSearch>
+        <localSearchType>TABU_SEARCH</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="1">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>47844192</usedMemoryAfterInputSolution>
+        <succeeded>false</succeeded>
+        <timeMillisSpent>-1</timeMillisSpent>
+        <scoreCalculationCount>-1</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="2">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>84073240</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0hard/-706643.5374777449647soft</score>
+        <timeMillisSpent>11893</timeMillisSpent>
+        <scoreCalculationCount>527618</scoreCalculationCount>
+        <scoreExplanationSummary>Explanation of score (0hard/-706643.5374777449647soft):
+    Constraint match totals:
+        -616643.5374777449647soft: constraint (Distance) has 50 matches:
+            -41618.30310733355soft: justifications ([customer id:32 location: x: 416204.142469, y:281045.423457])
+            -38752.21597403634soft: justifications ([customer id:5 location: x: 416217.961112, y:280854.97338])
+            ...
+        -90000.0soft: constraint (Setup Cost) has 13 matches:
+            -7500.0soft: justifications ([23 x: 388328.901804, y:13931.450473])
+            -7500.0soft: justifications ([0 x: 430582.903998, y:430582.903998])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 63):
+        -41618.30310733355soft: justification (customer id:32 location: x: 416204.142469, y:281045.423457) has 1 matches:
+            -41618.30310733355soft: constraint (Distance)
+        -38752.21597403634soft: justification (customer id:5 location: x: 416217.961112, y:280854.97338) has 1 matches:
+            -38752.21597403634soft: constraint (Distance)
+        -36434.48134419754soft: justification (customer id:43 location: x: 416137.917099, y:280096.149318) has 1 matches:
+            -36434.48134419754soft: constraint (Distance)
+        -33812.37063015149soft: justification (customer id:40 location: x: 415716.236926, y:286746.974892) has 1 matches:
+            -33812.37063015149soft: constraint (Distance)
+        -29963.839408234166soft: justification (customer id:15 location: x: 416005.244245, y:279715.00832) has 1 matches:
+            -29963.839408234166soft: constraint (Distance)
+        ...
+</scoreExplanationSummary>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <solverBenchmarkResult>
+    <name>hill climbing</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <environmentMode>FULL_ASSERT</environmentMode>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+        <assertionScoreDirectorFactory>
+          <easyScoreCalculatorClass>demo.model.FPLScoreCalculator</easyScoreCalculatorClass>
+        </assertionScoreDirectorFactory>
+      </scoreDirectorFactory>
+      <termination>
+        <terminationCompositionStyle>OR</terminationCompositionStyle>
+        <minutesSpentLimit>1</minutesSpentLimit>
+        <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+      </termination>
+      <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+      </constructionHeuristic>
+      <localSearch>
+        <localSearchType>HILL_CLIMBING</localSearchType>
+      </localSearch>
+    </solverConfig>
+    <singleBenchmarkResult id="3">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>78797232</usedMemoryAfterInputSolution>
+        <succeeded>false</succeeded>
+        <timeMillisSpent>-1</timeMillisSpent>
+        <scoreCalculationCount>-1</scoreCalculationCount>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="4">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>89542144</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftbigdecimal.HardSoftBigDecimalScore">0hard/-720277.2862521089912soft</score>
+        <timeMillisSpent>10356</timeMillisSpent>
+        <scoreCalculationCount>498350</scoreCalculationCount>
+        <scoreExplanationSummary>Explanation of score (0hard/-720277.2862521089912soft):
+    Constraint match totals:
+        -645277.2862521089912soft: constraint (Distance) has 50 matches:
+            -41618.30310733355soft: justifications ([customer id:32 location: x: 416204.142469, y:281045.423457])
+            -38752.21597403634soft: justifications ([customer id:5 location: x: 416217.961112, y:280854.97338])
+            ...
+        -75000.0soft: constraint (Setup Cost) has 11 matches:
+            -7500.0soft: justifications ([23 x: 388328.901804, y:13931.450473])
+            -7500.0soft: justifications ([0 x: 430582.903998, y:430582.903998])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 61):
+        -41618.30310733355soft: justification (customer id:32 location: x: 416204.142469, y:281045.423457) has 1 matches:
+            -41618.30310733355soft: constraint (Distance)
+        -38752.21597403634soft: justification (customer id:5 location: x: 416217.961112, y:280854.97338) has 1 matches:
+            -38752.21597403634soft: constraint (Distance)
+        -36434.48134419754soft: justification (customer id:43 location: x: 416137.917099, y:280096.149318) has 1 matches:
+            -36434.48134419754soft: constraint (Distance)
+        -33812.37063015149soft: justification (customer id:40 location: x: 415716.236926, y:286746.974892) has 1 matches:
+            -33812.37063015149soft: constraint (Distance)
+        -29963.839408234166soft: justification (customer id:15 location: x: 416005.244245, y:279715.00832) has 1 matches:
+            -29963.839408234166soft: constraint (Distance)
+        ...
+</scoreExplanationSummary>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_100_1</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>1</singleBenchmarkResult>
+    <singleBenchmarkResult>3</singleBenchmarkResult>
+    <inputSolutionLoadingTimeMillisSpent>743</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>fl_25_2</name>
+    <fileProblemProvider/>
+    <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>2</singleBenchmarkResult>
+    <singleBenchmarkResult>4</singleBenchmarkResult>
+    <entityCount>50</entityCount>
+    <variableCount>50</variableCount>
+    <maximumValueCount>25</maximumValueCount>
+    <problemScale>1250</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>805</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <startingTimestamp>2021-04-12T12:29:12.8184026+03:00</startingTimestamp>
+  <benchmarkTimeMillisSpent>46932</benchmarkTimeMillisSpent>
+</plannerBenchmarkResult>

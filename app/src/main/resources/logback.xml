@@ -6,7 +6,7 @@
         </encoder>
     </appender>
 
-    <logger name="org.optaplanner" level="wa"/>
+    <logger name="org.optaplanner.core" level="info"/>
 
     <root level="warn">
         <appender-ref ref="appender"/>

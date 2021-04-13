@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><plannerBenchmarkResult>
+  <name>2021-04-06_193204</name>
+  <aggregation>false</aggregation>
+  <availableProcessors>4</availableProcessors>
+  <loggingLevelOptaPlannerCore>debug</loggingLevelOptaPlannerCore>
+  <loggingLevelDroolsCore>warn</loggingLevelDroolsCore>
+  <maxMemory>1862270976</maxMemory>
+  <optaPlannerVersion>8.4.1.Final</optaPlannerVersion>
+  <javaVersion>Java 11.0.10 (AdoptOpenJDK)</javaVersion>
+  <javaVM>Java OpenJDK 64-Bit Server VM 11.0.10+9 (AdoptOpenJDK)</javaVM>
+  <operatingSystem>Windows 10 amd64 10.0</operatingSystem>
+  <parallelBenchmarkCount>1</parallelBenchmarkCount>
+  <warmUpTimeMillisSpentLimit>30</warmUpTimeMillisSpentLimit>
+  <solverBenchmarkResult>
+    <name>Config_0</name>
+    <subSingleCount>1</subSingleCount>
+    <solverConfig>
+      <environmentMode>FULL_ASSERT</environmentMode>
+      <randomSeed>0</randomSeed>
+      <moveThreadCount>NONE</moveThreadCount>
+      <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
+      <entityClass>demo.model.Customer</entityClass>
+      <scoreDirectorFactory>
+        <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
+      </scoreDirectorFactory>
+      <termination>
+        <terminationCompositionStyle>OR</terminationCompositionStyle>
+        <minutesSpentLimit>2</minutesSpentLimit>
+        <unimprovedSecondsSpentLimit>50</unimprovedSecondsSpentLimit>
+      </termination>
+      <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+      </constructionHeuristic>
+      <localSearch/>
+    </solverConfig>
+    <singleBenchmarkResult id="1">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>10507496</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-3269796soft</score>
+        <timeMillisSpent>51186</timeMillisSpent>
+        <scoreCalculationCount>520444</scoreCalculationCount>
+        <scoreExplanationSummary>Explanation of score (0hard/-3269796soft):
+    Constraint match totals:
+        -3232296soft: constraint (Distance) has 50 matches:
+            -595672soft: justifications ([customer id:33 location: x: 498348.622166, y:1042778.922491])
+            -163356soft: justifications ([customer id:26 location: x: 250434.12112, y:187215.186265])
+            ...
+        -37500soft: constraint (Setup Cost) has 6 matches:
+            -7500soft: justifications ([7 x: 437312.884269, y:236298.791087])
+            -7500soft: justifications ([6 x: 434319.760208, y:348947.990899])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 56):
+        -595672soft: justification (customer id:33 location: x: 498348.622166, y:1042778.922491) has 1 matches:
+            -595672soft: constraint (Distance)
+        -163356soft: justification (customer id:26 location: x: 250434.12112, y:187215.186265) has 1 matches:
+            -163356soft: constraint (Distance)
+        -127144soft: justification (customer id:10 location: x: 301852.601198, y:459101.879327) has 1 matches:
+            -127144soft: constraint (Distance)
+        -90858soft: justification (customer id:36 location: x: 333744.356821, y:398310.433016) has 1 matches:
+            -90858soft: constraint (Distance)
+        -57208soft: justification (customer id:48 location: x: 416009.61528, y:289392.477399) has 1 matches:
+            -57208soft: constraint (Distance)
+        ...
+</scoreExplanationSummary>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="2">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>10653360</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-7996373soft</score>
+        <timeMillisSpent>120002</timeMillisSpent>
+        <scoreCalculationCount>415340</scoreCalculationCount>
+        <scoreExplanationSummary>Explanation of score (0hard/-7996373soft):
+    Constraint match totals:
+        -7732108soft: constraint (Distance) has 200 matches:
+            -598962soft: justifications ([customer id:33 location: x: 32629.3675, y:39238.5275])
+            -127144soft: justifications ([customer id:10 location: x: 61612.11, y:177233.915])
+            ...
+        -264265soft: constraint (Setup Cost) has 32 matches:
+            -10025soft: justifications ([43 x: 144743.585, y:10229.7475])
+            -9903soft: justifications ([27 x: 58957.41, y:41167.495])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 232):
+        -598962soft: justification (customer id:33 location: x: 32629.3675, y:39238.5275) has 1 matches:
+            -598962soft: constraint (Distance)
+        -127144soft: justification (customer id:10 location: x: 61612.11, y:177233.915) has 1 matches:
+            -127144soft: constraint (Distance)
+        -110391soft: justification (customer id:49 location: x: 154996.7, y:104185.3725) has 1 matches:
+            -110391soft: constraint (Distance)
+        -110309soft: justification (customer id:30 location: x: 71820.8875, y:100041.4325) has 1 matches:
+            -110309soft: constraint (Distance)
+        -110069soft: justification (customer id:39 location: x: 25907.0575, y:8763.82) has 1 matches:
+            -110069soft: constraint (Distance)
+        ...
+</scoreExplanationSummary>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+    <singleBenchmarkResult id="3">
+      <subSingleBenchmarkResult>
+        <subSingleBenchmarkIndex>0</subSingleBenchmarkIndex>
+        <usedMemoryAfterInputSolution>10666256</usedMemoryAfterInputSolution>
+        <succeeded>true</succeeded>
+        <score class="org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore">0hard/-3961465soft</score>
+        <timeMillisSpent>63692</timeMillisSpent>
+        <scoreCalculationCount>346028</scoreCalculationCount>
+        <scoreExplanationSummary>Explanation of score (0hard/-3961465soft):
+    Constraint match totals:
+        -3955192soft: constraint (Distance) has 100 matches:
+            -595672soft: justifications ([customer id:33 location: x: 52.878776, y:52.681288])
+            -127144soft: justifications ([customer id:10 location: x: 34.176174, y:31.355789])
+            ...
+        -6273soft: constraint (Setup Cost) has 35 matches:
+            -278soft: justifications ([58 x: 30.923617, y:39.951356])
+            -233soft: justifications ([60 x: 37.835086, y:23.961322])
+            ...
+        0: constraint (Faciliy capasisty) has 0 matches:
+    Indictments (top 5 of 135):
+        -595672soft: justification (customer id:33 location: x: 52.878776, y:52.681288) has 1 matches:
+            -595672soft: constraint (Distance)
+        -127144soft: justification (customer id:10 location: x: 34.176174, y:31.355789) has 1 matches:
+            -127144soft: constraint (Distance)
+        -90858soft: justification (customer id:36 location: x: 0.0, y:31.039199) has 1 matches:
+            -90858soft: constraint (Distance)
+        -64762soft: justification (customer id:26 location: x: 34.173417, y:31.226773) has 1 matches:
+            -64762soft: constraint (Distance)
+        -56358soft: justification (customer id:48 location: x: 42.373285, y:33.823407) has 1 matches:
+            -56358soft: constraint (Distance)
+        ...
+</scoreExplanationSummary>
+      </subSingleBenchmarkResult>
+      <timeMillisSpent>-1</timeMillisSpent>
+      <scoreCalculationCount>-1</scoreCalculationCount>
+    </singleBenchmarkResult>
+  </solverBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>Problem_0</name>
+    <instanceProblemProvider/>
+    <writeOutputSolutionEnabled>false</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>1</singleBenchmarkResult>
+    <entityCount>50</entityCount>
+    <variableCount>50</variableCount>
+    <maximumValueCount>25</maximumValueCount>
+    <problemScale>1250</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>1</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>Problem_1</name>
+    <instanceProblemProvider/>
+    <writeOutputSolutionEnabled>false</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>2</singleBenchmarkResult>
+    <entityCount>200</entityCount>
+    <variableCount>200</variableCount>
+    <maximumValueCount>50</maximumValueCount>
+    <problemScale>10000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>1</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <unifiedProblemBenchmarkResult>
+    <name>Problem_2</name>
+    <instanceProblemProvider/>
+    <writeOutputSolutionEnabled>false</writeOutputSolutionEnabled>
+    <bestScoreProblemStatistic>
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </bestScoreProblemStatistic>
+    <singleBenchmarkResult>3</singleBenchmarkResult>
+    <entityCount>100</entityCount>
+    <variableCount>100</variableCount>
+    <maximumValueCount>100</maximumValueCount>
+    <problemScale>10000</problemScale>
+    <inputSolutionLoadingTimeMillisSpent>1</inputSolutionLoadingTimeMillisSpent>
+  </unifiedProblemBenchmarkResult>
+  <startingTimestamp>2021-04-06T19:32:04.8478216+03:00</startingTimestamp>
+  <benchmarkTimeMillisSpent>235971</benchmarkTimeMillisSpent>
+</plannerBenchmarkResult>
