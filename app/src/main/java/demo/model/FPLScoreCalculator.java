@@ -25,7 +25,7 @@ public class FPLScoreCalculator implements EasyScoreCalculator<FacilityLocationP
                     assignedDemands.put(id, c.getDemand());
                 }
             }else{
-                hard = hard.add(BigDecimal.valueOf(100));
+                //hard = hard.add(BigDecimal.valueOf(100));
             }
         }
 

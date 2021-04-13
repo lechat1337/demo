@@ -5,32 +5,66 @@
 
     <inheritedSolverBenchmark>
         <solver>
-            <environmentMode>FAST_ASSERT</environmentMode>
+            <environmentMode>REPRODUCIBLE</environmentMode>
             <solutionClass>demo.model.FacilityLocationProblem</solutionClass>
             <entityClass>demo.model.Customer</entityClass>
             <scoreDirectorFactory>
                 <constraintProviderClass>demo.model.FLPConstraingProvider</constraintProviderClass>
                 <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
-                <assertionScoreDirectorFactory>
-                    <easyScoreCalculatorClass>demo.model.FPLScoreCalculator</easyScoreCalculatorClass>
-                </assertionScoreDirectorFactory>
+<!--                <assertionScoreDirectorFactory>-->
+<!--                    <easyScoreCalculatorClass>demo.model.FPLScoreCalculator</easyScoreCalculatorClass>-->
+<!--                </assertionScoreDirectorFactory>-->
             </scoreDirectorFactory>
             <termination>
-                <terminationCompositionStyle>OR</terminationCompositionStyle>
-                <minutesSpentLimit>1</minutesSpentLimit>
-                <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+                <minutesSpentLimit>2</minutesSpentLimit>
             </termination>
             <constructionHeuristic>
                 <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
 
             </constructionHeuristic>
 
+            <localSearch>
+                <termination>
+                    <terminationCompositionStyle>OR</terminationCompositionStyle>
+                    <unimprovedSecondsSpentLimit>30</unimprovedSecondsSpentLimit>
+                    <unimprovedScoreDifferenceThreshold>0hard/100soft</unimprovedScoreDifferenceThreshold>
+                </termination>
+                <unionMoveSelector>
+                    <changeMoveSelector>
+                        <entitySelector id="entitySelector1"/>
+                        <valueSelector>
+                            <nearbySelection>
+                                <originEntitySelector mimicSelectorRef="entitySelector1"/>
+                                <nearbyDistanceMeterClass>demo.model.CustomerFacilityNearbyDistanceMeter</nearbyDistanceMeterClass>
+                                <parabolicDistributionSizeMaximum>40</parabolicDistributionSizeMaximum>
+                            </nearbySelection>
+                        </valueSelector>
+                    </changeMoveSelector>
+                    <swapMoveSelector>
+                        <entitySelector id="entitySelector2"/>
+                        <secondaryEntitySelector>
+                            <nearbySelection>
+                                <originEntitySelector mimicSelectorRef="entitySelector2"/>
+                                <nearbyDistanceMeterClass>demo.model.CustomerCustomerNearbyDistanceMeter</nearbyDistanceMeterClass>
+                                <parabolicDistributionSizeMaximum>50</parabolicDistributionSizeMaximum>
+                            </nearbySelection>
+                        </secondaryEntitySelector>
+                    </swapMoveSelector>
+                </unionMoveSelector>
+            </localSearch>
+
         </solver>
         <problemBenchmarks>
             <solutionFileIOClass>demo.exec.FacilityLocationProblemFileIO</solutionFileIOClass>
             <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
-            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_1</inputSolutionFile>
-            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_25_2</inputSolutionFile>
+<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_25_2</inputSolutionFile>-->
+<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_50_6</inputSolutionFile>-->
+<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_7</inputSolutionFile>-->
+<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_1</inputSolutionFile>-->
+<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_200_7</inputSolutionFile>-->
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_500_7</inputSolutionFile>
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_1000_2</inputSolutionFile>
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_2000_2</inputSolutionFile>
         </problemBenchmarks>
 
     </inheritedSolverBenchmark>
