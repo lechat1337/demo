@@ -20,7 +20,7 @@ public class FacilityLocationProblemFileIO implements SolutionFileIO<FacilityLoc
         Facility tmpFac = new Facility();
         int nClients = 0;
         int nWarehouses = 0;
-
+        Matrix.clear();
         try {
             Scanner sc = new Scanner(file).useLocale(Locale.US);
             nWarehouses = sc.nextInt();
@@ -57,6 +57,7 @@ public class FacilityLocationProblemFileIO implements SolutionFileIO<FacilityLoc
             res.append(c.getFacility().getId()).append(" ");
         }
         BufferedWriter writer = null;
+        System.out.println(res.toString());
         try {
             writer = new BufferedWriter(new FileWriter(outputSolutionFile.getAbsolutePath(), false));
             writer.write(res.toString());

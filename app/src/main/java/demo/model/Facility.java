@@ -9,7 +9,8 @@ public class Facility {
     private BigDecimal capasity;
     private BigDecimal cost;
 
-    public Facility(){}
+    public Facility(){
+    }
 
     public Facility(int id, BigDecimal cost, BigDecimal cap, Location loc){
         this.id = id;
@@ -30,6 +31,7 @@ public class Facility {
     public BigDecimal getCapasity() {
         return capasity;
     }
+
     public long getCapasityLong() {return capasity.longValue();}
 
     public void setCost(BigDecimal cost) {
@@ -49,6 +51,9 @@ public class Facility {
         return location;
     }
 
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
     public String toString(){
         StringBuilder b = new StringBuilder();
@@ -57,4 +62,5 @@ public class Facility {
          .append(this.location.toString());
         return b.toString();
     }
+
 }
