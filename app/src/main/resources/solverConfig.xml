@@ -13,7 +13,7 @@
     </scoreDirectorFactory>
 
     <termination>
-        <hoursSpentLimit>2</hoursSpentLimit>
+        <minutesSpentLimit>15</minutesSpentLimit>
     </termination>
 
     <constructionHeuristic>
@@ -23,7 +23,7 @@
     <localSearch>
         <termination>
             <terminationCompositionStyle>OR</terminationCompositionStyle>
-            <unimprovedSecondsSpentLimit>30</unimprovedSecondsSpentLimit>
+            <unimprovedSecondsSpentLimit>110</unimprovedSecondsSpentLimit>
             <unimprovedScoreDifferenceThreshold>0hard/100soft</unimprovedScoreDifferenceThreshold>
         </termination>
         <localSearchType>HILL_CLIMBING</localSearchType>
@@ -33,7 +33,37 @@
                 <valueSelector>
                     <nearbySelection>
                         <originEntitySelector mimicSelectorRef="entitySelector1"/>
-                        <nearbyDistanceMeterClass>demo.model.CustomNearbyDistanceMeter</nearbyDistanceMeterClass>
+                        <nearbyDistanceMeterClass>demo.model.CustomerFacilityNearbyDistanceMeter</nearbyDistanceMeterClass>
+                        <parabolicDistributionSizeMaximum>50</parabolicDistributionSizeMaximum>
+                    </nearbySelection>
+                </valueSelector>
+            </changeMoveSelector>
+            <swapMoveSelector>
+                <entitySelector id="entitySelector2"/>
+                <secondaryEntitySelector>
+                    <nearbySelection>
+                        <originEntitySelector mimicSelectorRef="entitySelector2"/>
+                        <nearbyDistanceMeterClass>demo.model.CustomerCustomerNearbyDistanceMeter</nearbyDistanceMeterClass>
+                        <parabolicDistributionSizeMaximum>50</parabolicDistributionSizeMaximum>
+                    </nearbySelection>
+                </secondaryEntitySelector>
+            </swapMoveSelector>
+        </unionMoveSelector>
+    </localSearch>
+    <localSearch>
+        <termination>
+            <terminationCompositionStyle>OR</terminationCompositionStyle>
+            <unimprovedSecondsSpentLimit>110</unimprovedSecondsSpentLimit>
+            <unimprovedScoreDifferenceThreshold>0hard/100soft</unimprovedScoreDifferenceThreshold>
+        </termination>
+        <localSearchType>TABU_SEARCH</localSearchType>
+        <unionMoveSelector>
+            <changeMoveSelector>
+                <entitySelector id="entitySelector1"/>
+                <valueSelector>
+                    <nearbySelection>
+                        <originEntitySelector mimicSelectorRef="entitySelector1"/>
+                        <nearbyDistanceMeterClass>demo.model.CustomerFacilityNearbyDistanceMeter</nearbyDistanceMeterClass>
                         <parabolicDistributionSizeMaximum>40</parabolicDistributionSizeMaximum>
                     </nearbySelection>
                 </valueSelector>
@@ -43,7 +73,7 @@
                 <secondaryEntitySelector>
                     <nearbySelection>
                         <originEntitySelector mimicSelectorRef="entitySelector2"/>
-                        <nearbyDistanceMeterClass>demo.model.CustomNearbyDistanceMeter</nearbyDistanceMeterClass>
+                        <nearbyDistanceMeterClass>demo.model.CustomerCustomerNearbyDistanceMeter</nearbyDistanceMeterClass>
                         <parabolicDistributionSizeMaximum>40</parabolicDistributionSizeMaximum>
                     </nearbySelection>
                 </secondaryEntitySelector>

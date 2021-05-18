@@ -16,7 +16,7 @@
 <!--                </assertionScoreDirectorFactory>-->
             </scoreDirectorFactory>
             <termination>
-                <minutesSpentLimit>2</minutesSpentLimit>
+                <minutesSpentLimit>1</minutesSpentLimit>
             </termination>
             <constructionHeuristic>
                 <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
@@ -26,8 +26,8 @@
             <localSearch>
                 <termination>
                     <terminationCompositionStyle>OR</terminationCompositionStyle>
-                    <unimprovedSecondsSpentLimit>30</unimprovedSecondsSpentLimit>
-                    <unimprovedScoreDifferenceThreshold>0hard/100soft</unimprovedScoreDifferenceThreshold>
+                    <unimprovedSecondsSpentLimit>90</unimprovedSecondsSpentLimit>
+                    <unimprovedScoreDifferenceThreshold>0hard/900soft</unimprovedScoreDifferenceThreshold>
                 </termination>
                 <unionMoveSelector>
                     <changeMoveSelector>
@@ -36,7 +36,7 @@
                             <nearbySelection>
                                 <originEntitySelector mimicSelectorRef="entitySelector1"/>
                                 <nearbyDistanceMeterClass>demo.model.CustomerFacilityNearbyDistanceMeter</nearbyDistanceMeterClass>
-                                <parabolicDistributionSizeMaximum>40</parabolicDistributionSizeMaximum>
+                                <parabolicDistributionSizeMaximum>20</parabolicDistributionSizeMaximum>
                             </nearbySelection>
                         </valueSelector>
                     </changeMoveSelector>
@@ -46,7 +46,7 @@
                             <nearbySelection>
                                 <originEntitySelector mimicSelectorRef="entitySelector2"/>
                                 <nearbyDistanceMeterClass>demo.model.CustomerCustomerNearbyDistanceMeter</nearbyDistanceMeterClass>
-                                <parabolicDistributionSizeMaximum>50</parabolicDistributionSizeMaximum>
+                                <parabolicDistributionSizeMaximum>20</parabolicDistributionSizeMaximum>
                             </nearbySelection>
                         </secondaryEntitySelector>
                     </swapMoveSelector>
@@ -59,12 +59,12 @@
             <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
 <!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_25_2</inputSolutionFile>-->
 <!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_50_6</inputSolutionFile>-->
-<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_7</inputSolutionFile>-->
-<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_1</inputSolutionFile>-->
-<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_200_7</inputSolutionFile>-->
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_7</inputSolutionFile>
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_1</inputSolutionFile>
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_200_7</inputSolutionFile>
             <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_500_7</inputSolutionFile>
-            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_1000_2</inputSolutionFile>
-            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_2000_2</inputSolutionFile>
+<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_1000_2</inputSolutionFile>-->
+<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_2000_2</inputSolutionFile>-->
         </problemBenchmarks>
 
     </inheritedSolverBenchmark>

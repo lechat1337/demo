@@ -19,7 +19,7 @@ public class ConsoleRunner {
 //solver configuration, coursera data
 //        FacilityLocationProblemFileIO io = new FacilityLocationProblemFileIO();
 //        String inputs[] = {"/data/fl_25_2", "/data/fl_50_6", "/data/fl_100_7", "/data/fl_100_1", "/data/fl_200_7", "/data/fl_500_7", "/data/fl_1000_2", "/data/fl_2000_2"};
-//        FacilityLocationProblem problem = io.read(new File("C:\\Users\\aleksejs\\coursera\\facility\\input_file.txt")); //+inputs[3]));
+//        FacilityLocationProblem problem = io.read(new File("C:\\Users\\aleksejs\\coursera\\facility\\input_file.txt"));//+inputs[3]));
 //
 //        FacilityLocationProblem solution = ProblemSolver.solve(problem);
 //        io.write(solution, new File("C:\\Users\\aleksejs\\coursera\\facility\\solution_file.txt"));
