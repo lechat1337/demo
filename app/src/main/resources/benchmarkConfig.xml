@@ -15,25 +15,27 @@
 <!--                    <easyScoreCalculatorClass>demo.model.FPLScoreCalculator</easyScoreCalculatorClass>-->
 <!--                </assertionScoreDirectorFactory>-->
             </scoreDirectorFactory>
-            <termination>
-                <secondsSpentLimit>90</secondsSpentLimit>
-            </termination>
+<!--            <termination>-->
+<!--                <minutesSpentLimit>10</minutesSpentLimit>-->
+<!--            </termination>-->
             <constructionHeuristic>
                 <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
 
             </constructionHeuristic>
 
             <localSearch>
+
                 <termination>
 <!--                    <terminationCompositionStyle>OR</terminationCompositionStyle>-->
 <!--                    <unimprovedSecondsSpentLimit>90</unimprovedSecondsSpentLimit>-->
 <!--                    <unimprovedScoreDifferenceThreshold>0hard/900soft</unimprovedScoreDifferenceThreshold>-->
-                    <bestScoreLimit>0hard/-2100soft</bestScoreLimit>
+<!--                    <bestScoreLimit>0hard/-2100soft</bestScoreLimit>-->
+                    <secondsSpentLimit>10</secondsSpentLimit>
                 </termination>
+                <localSearchType>LATE_ACCEPTANCE</localSearchType>
+
+
 <!--                <localSearchType>TABU_SEARCH</localSearchType>-->
-                <forager>
-                    <acceptedCountLimit>1000</acceptedCountLimit>
-                </forager>
 <!--                <unionMoveSelector>-->
 <!--                    <changeMoveSelector>-->
 <!--                        <entitySelector id="entitySelector1"/>-->
@@ -63,9 +65,9 @@
 
             <solutionFileIOClass>demo.exec.FacilityLocationProblemFileIO</solutionFileIOClass>
             <writeOutputSolutionEnabled>true</writeOutputSolutionEnabled>
-<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_25_2</inputSolutionFile>-->
+            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_25_2</inputSolutionFile>
 <!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_50_6</inputSolutionFile>-->
-            <inputSolutionFile>C:\Users\lecha\coursera\facility\data\fl_100_7</inputSolutionFile>
+<!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_7</inputSolutionFile>-->
 <!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_100_1</inputSolutionFile>-->
 <!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_200_7</inputSolutionFile>-->
 <!--            <inputSolutionFile>C:\Users\aleksejs\coursera\demo\app\src\main\data\fl_500_7</inputSolutionFile>-->
@@ -75,54 +77,151 @@
         </problemBenchmarks>
 
     </inheritedSolverBenchmark>
-
     <solverBenchmark>
-        <name>taboo1</name>
+        <name>swap MOVE selector</name>
         <solver>
+
             <localSearch>
+                <termination>
+                    <minutesSpentLimit>2</minutesSpentLimit>
+                </termination>
+                <!--                <localSearchType>TABU_SEARCH</localSearchType>-->
+                    <swapMoveSelector>
+                    </swapMoveSelector>
+
+
                 <acceptor>
-                    <entityTabuRatio>0.05</entityTabuRatio>
-                    <valueTabuRatio>0.4</valueTabuRatio>
+                    <entityTabuRatio>0.021</entityTabuRatio>
                 </acceptor>
+                <forager>
+                    <acceptedCountLimit>20</acceptedCountLimit>
+<!--                    <finalistPodiumType>STRATEGIC_OSCILLATION</finalistPodiumType>-->
+                </forager>
             </localSearch>
         </solver>
     </solverBenchmark>
 
+
     <solverBenchmark>
-        <name>taboo75</name>
+        <name>pillar change MOVE selector</name>
         <solver>
+
             <localSearch>
+                <termination>
+                    <minutesSpentLimit>2</minutesSpentLimit>
+                </termination>
+                <!--                <localSearchType>TABU_SEARCH</localSearchType>-->
+                <pillarChangeMoveSelector>
+                </pillarChangeMoveSelector>
+
+
                 <acceptor>
-                    <entityTabuRatio>0.05</entityTabuRatio>
-                    <valueTabuRatio>0.3</valueTabuRatio>
+                    <entityTabuRatio>0.021</entityTabuRatio>
                 </acceptor>
+                <forager>
+                    <acceptedCountLimit>100</acceptedCountLimit>
+                    <!--                    <finalistPodiumType>STRATEGIC_OSCILLATION</finalistPodiumType>-->
+                </forager>
             </localSearch>
         </solver>
     </solverBenchmark>
 
+
     <solverBenchmark>
-        <name>taboo5</name>
+        <name>pillar and swap MOVE selector</name>
         <solver>
+
             <localSearch>
+                <termination>
+                    <minutesSpentLimit>2</minutesSpentLimit>
+                </termination>
+                <!--                <localSearchType>TABU_SEARCH</localSearchType>-->
+                <unionMoveSelector>
+                    <swapMoveSelector>
+                    </swapMoveSelector>
+                    <pillarChangeMoveSelector>
+                    </pillarChangeMoveSelector>
+
+                </unionMoveSelector>
+
+
                 <acceptor>
-                    <entityTabuRatio>0.05</entityTabuRatio>
-                    <valueTabuRatio>0.2</valueTabuRatio>
+                    <entityTabuRatio>0.021</entityTabuRatio>
                 </acceptor>
+                <forager>
+                    <acceptedCountLimit>100</acceptedCountLimit>
+                    <!--                    <finalistPodiumType>STRATEGIC_OSCILLATION</finalistPodiumType>-->
+                </forager>
             </localSearch>
         </solver>
     </solverBenchmark>
 
-    <solverBenchmark>
-        <name>taboo25</name>
-        <solver>
-            <localSearch>
-                <acceptor>
-                    <entityTabuRatio>0.05</entityTabuRatio>
-                    <valueTabuRatio>0.1</valueTabuRatio>
-                </acceptor>
-            </localSearch>
-        </solver>
-    </solverBenchmark>
+
+    <!--    <solverBenchmark>-->
+<!--        <name>simulated annealing300</name>-->
+<!--        <solver>-->
+
+<!--            <localSearch>-->
+<!--                <termination>-->
+<!--                    <minutesSpentLimit>2</minutesSpentLimit>-->
+<!--                </termination>-->
+<!--&lt;!&ndash;                <localSearchType>TABU_SEARCH</localSearchType>&ndash;&gt;-->
+<!--                <acceptor>-->
+<!--&lt;!&ndash;                    <simulatedAnnealingStartingTemperature>20hard/300soft</simulatedAnnealingStartingTemperature>&ndash;&gt;-->
+<!--                    <entityTabuRatio>0.0225</entityTabuRatio>-->
+<!--                    <valueTabuSize>7</valueTabuSize>-->
+<!--                </acceptor>-->
+<!--                <forager>-->
+<!--                    <acceptedCountLimit>1</acceptedCountLimit>-->
+<!--&lt;!&ndash;                    <finalistPodiumType>STRATEGIC_OSCILLATION_BY_LEVEL</finalistPodiumType>&ndash;&gt;-->
+<!--                </forager>-->
+<!--            </localSearch>-->
+<!--        </solver>-->
+<!--    </solverBenchmark>-->
+
+<!--    <solverBenchmark>-->
+<!--        <name>simulated annealing200</name>-->
+<!--        <solver>-->
+
+<!--            <localSearch>-->
+<!--                <termination>-->
+<!--                    <minutesSpentLimit>2</minutesSpentLimit>-->
+<!--                </termination>-->
+<!--&lt;!&ndash;                <localSearchType>TABU_SEARCH</localSearchType>&ndash;&gt;-->
+<!--                <acceptor>-->
+<!--&lt;!&ndash;                    <simulatedAnnealingStartingTemperature>20hard/200soft</simulatedAnnealingStartingTemperature>&ndash;&gt;-->
+<!--                    <entityTabuRatio>0.0225</entityTabuRatio>-->
+<!--&lt;!&ndash;                    <valueTabuSize>11</valueTabuSize>&ndash;&gt;-->
+<!--                </acceptor>-->
+<!--                <forager>-->
+<!--                    <acceptedCountLimit>250</acceptedCountLimit>-->
+<!--&lt;!&ndash;                    <finalistPodiumType>STRATEGIC_OSCILLATION_BY_LEVEL_ON_BEST_SCORE</finalistPodiumType>&ndash;&gt;-->
+<!--                </forager>-->
+<!--            </localSearch>-->
+<!--        </solver>-->
+<!--    </solverBenchmark>-->
+<!--    <solverBenchmark>-->
+<!--        <name>taboo20</name>-->
+<!--        <solver>-->
+<!--            <localSearch>-->
+<!--                <acceptor>-->
+<!--                    <entityTabuSize>20</entityTabuSize>-->
+<!--                </acceptor>-->
+<!--            </localSearch>-->
+<!--        </solver>-->
+<!--    </solverBenchmark>-->
+<!--    <solverBenchmark>-->
+<!--        <name>taboo40</name>-->
+<!--        <solver>-->
+<!--            <localSearch>-->
+<!--                <acceptor>-->
+<!--                    <entityTabuSize>40</entityTabuSize>-->
+<!--                </acceptor>-->
+<!--            </localSearch>-->
+<!--        </solver>-->
+<!--    </solverBenchmark>-->
+
+
 
 
 </plannerBenchmark>

@@ -13,7 +13,7 @@
     </scoreDirectorFactory>
 
     <termination>
-        <minutesSpentLimit>15</minutesSpentLimit>
+        <minutesSpentLimit>5</minutesSpentLimit>
     </termination>
 
     <constructionHeuristic>
@@ -78,6 +78,8 @@
                     </nearbySelection>
                 </secondaryEntitySelector>
             </swapMoveSelector>
+            <pillarChangeMoveSelector>
+            </pillarChangeMoveSelector>
         </unionMoveSelector>
     </localSearch>
 </solver>
